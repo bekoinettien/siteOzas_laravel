@@ -1,0 +1,24 @@
+.box-service {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 5);
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    
+}
+.box-service:hover{
+    background-color: rgb(16, 120, 230);
+    
+    h4{
+        color: white;
+    }
+    p{
+        color: white;
+        font-style: italic;
+        text-justify: auto;
+    }
+    .images-service{
+        width: 50px;
+        height: 150px;
+    }
+   
+}

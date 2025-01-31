@@ -1,0 +1,142 @@
+
+.services-1-about{
+    background-color:black;
+    border-right: 15px;
+    margin-top: -150px;
+    border-top-right-radius: 50px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-style: oblique;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    padding-bottom: 25px;
+}
+
+
+.section-1-titre-about{
+    color: white;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+/* debut tes tabs */
+
+/* Style des onglets */
+.tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #002B5C; /* Bleu foncé pour "Nos cibles" */
+    color: white;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .tab-btn:not(.active) {
+    background: #FFC107; /* Couleur jaune pour les onglets non actifs */
+    color: #000;
+  }
+  
+  .tab-btn.active {
+    border-bottom: 3px solid #FFC107; /* Indicateur de sélection */
+  }
+  
+  /* Contenu des onglets */
+  .tab-content {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .tab-pane {
+    display: none; /* Tous les onglets cachés par défaut */
+  }
+  
+  .tab-pane.active {
+    display: block; /* Seulement l'onglet actif est affiché */
+  }
+  
+  .info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .info img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .info ul {
+    list-style: none;
+    text-align: left;
+  }
+  
+  .info ul li {
+    margin: 5px 0;
+    font-size: 18px;
+  }
+/* fin tabs   */
+
+/* section notre equipe */
+.card{
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 20px; 
+  max-width: 100%;
+  height: 150px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.card-img-top{
+  height: 250px !important;
+}
+
+.card-title{
+  font-size: 18px;
+  font-weight: bold;
+  color: white !important;
+}
+
+.card-text{
+  font-size: 15px !important;
+  color: white;
+}
+.card-body{
+  background-color: #000;
+}
+.card-body:hover{
+  background-color: #ffae00;
+ 
+}
+.ico{
+  margin-top: 4px;
+}
+
+.en{
+  color: darkblue;
+  font-size: 18px;
+  margin-right: 18px;
+}
+.fa{
+  color: darkblue;
+  font-size: 18px;
+  margin-right: 18px;
+}
+.lin{
+  color: darkblue;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.twi{
+  color: darkblue;
+  font-size: 18px;
+  margin-left: 18px;
+}

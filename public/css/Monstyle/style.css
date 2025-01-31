@@ -1,0 +1,263 @@
+/* debut footer */
+
+.footer{
+    margin-top: 10px;
+    background-color: black;
+ 
+}
+
+a.foot{
+    text-decoration: none;
+    font-size: 16px !important;
+   
+}
+
+.services-foot{
+    color: white;
+    font-size: 14px;
+}
+.section-foot-titre{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-style: oblique;
+    color: white;
+    justify-items: center;
+    justify-content: center;
+}
+.imag-foot{
+    text-align: center;
+}
+.image-foot{
+    width: 100px;
+    height: 60px;
+    margin-top: 20px;
+    padding-bottom: 15px;
+   
+}
+.cont-foot h2{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.menu-foot{
+    margin-top: 20px;
+    text-align: center;
+}
+.titre-foot{
+    color: white;
+    font-size: 25px;
+}
+.logo-item .log1{
+   height: 1050px;
+   width: auto;
+}
+
+/* Supprimer les styles de liste */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styliser les icônes */
+.icon-foot i {
+    font-style: normal; /* Supprime l'italique par défaut */
+    color: white; /* Ajuste la couleur (blanc dans ce cas) */
+    margin-right: 8px; /* Ajoute un espace entre l'icône et le texte */
+}
+
+/* Aligner le texte et les icônes */
+.icon-foot li {
+    text-decoration: none; /* Supprime tout soulignement */
+    display: flex; /* Met les icônes et le texte sur la même ligne */
+    align-items: center; /* Centre verticalement l'icône et le texte */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+    color: white; /* Couleur blanche pour le texte */
+    font-size: 16px; /* Taille du texte */
+}
+
+.titrefoot h1{
+    text-align: center;
+}
+
+.fa-envelope{
+    font-size: 25px;
+    margin-top: -5px;
+}
+.fa-location-dot{
+    font-size: 25px;
+}
+.fa-phone{
+    font-size: 25px;
+}
+/* fin footer */
+
+/* Debut navigation */
+
+.navbar-expand-lg
+{
+    background-color: rgb(27, 81, 152) !important;
+}
+.navbar {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .navbar.scrolled {
+    background-color: #333 !important; /* Couleur après scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+  }
+  
+  /* body {
+    padding-top: 70px; /* Compense la hauteur du menu sticky
+  } */
+  
+
+a
+{
+    color: white !important;
+    font-size: 20px !important;
+}
+
+a:hover{
+ background-color: brown;
+}
+
+.d-block{
+    width: 100%;
+    height: 500px !important;
+}
+
+/* Fin navigation */
+
+
+/* DEbut Accueil */
+
+.box-pres{
+    margin-top: -20px;
+    position: relative;
+    z-index: 2px;
+    text-align: center;
+    background-color: aliceblue;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+
+}
+.img-box-pres{
+   justify-content: center;
+   align-items: center;
+    
+}
+
+.img-pres{
+    width:100px;
+    height: 100px;
+    margin-top: 30px;
+    border-radius: 50%; /* Crée un cercle */
+    object-fit: cover; /* Garde l'image bien centrée */
+    border: 2px solid #000; /* Optionnel : ajouter une bordure */
+}
+
+.p-exp{
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+   
+}
+.titre{
+    margin-top: 25px;
+    text-align: center;
+}
+.titre h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    
+.titre-equipe{
+    text-decoration: underline;
+}
+}
+
+span{
+    color: rgb(239, 185, 23);
+   
+}
+.box{
+    
+    margin-top: 20px;
+    box-shadow: 45px;
+    text-align: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+   
+}
+/* .box:hover{
+    background-color: gold;
+    
+} */
+
+.img-box{
+   
+    margin-top: 30px;
+   justify-content: center;
+   align-items: center;
+    
+}
+
+.img-image{
+   height: 80px;
+    margin-top: 30px;
+    max-width: 200;
+}
+.detail-box{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;  
+}
+
+
+
+.services-1{
+    background-color: darkblue;
+    border-right: 15px;
+    margin-top: -150px;
+    border-top-right-radius: 50px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-style: oblique;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    padding-bottom: 25px;
+}
+.section-1-titre{
+    color: white;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+ /* Debut bout de revoie auto direction */
+#back-to-top {
+    position: fixed;
+    bottom: 20px; /* Distance par rapport au bas de la fenêtre */
+    right: 20px; /* Distance par rapport au côté droit */
+    display: none; /* Caché par défaut */
+    z-index: 1000;
+    background-color: #007bff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, background-color 0.3s;
+  }
+  
+  #back-to-top:hover {
+    background-color: #0056b3;
+  }
+   /* fin bout de revoie auto direction */
