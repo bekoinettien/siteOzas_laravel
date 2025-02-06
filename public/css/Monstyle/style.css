@@ -9,6 +9,7 @@
 a.foot{
     text-decoration: none;
     font-size: 16px !important;
+    color: white !important;
    
 }
 
@@ -98,7 +99,7 @@ ul {
 
 .navbar-expand-lg
 {
-    background-color: rgb(27, 81, 152) !important;
+    background-color: white !important;
 }
 .navbar {
     position: fixed !important;
@@ -111,6 +112,9 @@ ul {
   .navbar.scrolled {
     background-color: #333 !important; /* Couleur après scroll */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    .navig{
+        color: white !important;
+    }
   }
   
   /* body {
@@ -118,14 +122,15 @@ ul {
   } */
   
 
-a
+.navig
 {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
     font-size: 20px !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-a:hover{
- background-color: brown;
+.navig:hover{
+ background-color: rgb(227, 179, 23);
 }
 
 .d-block{
@@ -261,3 +266,67 @@ span{
     background-color: #0056b3;
   }
    /* fin bout de revoie auto direction */
+
+
+   /* tableau de bord */
+  .section-service1{
+    margin-top: 50px;
+  }
+ .service-odoo1{
+    margin-top: 50px;
+ }
+ .dashbord{
+    background-color: rgb(6, 56, 17) !important;
+ }
+
+ .text-dashbord {
+    color: rgb(238, 173, 10) !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+ }
+
+ .bout{
+    margin-top: 10px;
+    text-align: center;
+ }
+ 
+    .mod:hover{
+        background-color: aqua !important;
+    }
+    .sup:hover{
+        background-color: blue !important;
+    }
+ 
+
+ .inf-service{
+    background-color: rgba(197, 200, 199, 0.676);
+    height: 100%;
+ }
+ .box-odoo1{
+    background-color: white;
+    margin-bottom: 10px;
+    height: 45px;
+    padding-top: 10px;
+    margin-left: 25px;
+    margin-right: 25px; 
+ }
+ .titre-autres{
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 10px;
+    color: royalblue !important;
+ }
+ .box-odoo1:hover{
+    .titre-autres{
+        color: gold !important;
+    }
+ }
+ .ico-serv{
+    color: red !important;
+    font-size: 20px;
+    margin-left: 10px;
+ }
+ 
+ //bouton modifier et supprimer

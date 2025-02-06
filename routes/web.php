@@ -8,15 +8,79 @@ Route::get('/', function () {
     return view('pages/Accueil');
 });
 
-// frontend
 
+// ENTREGISTREMENT DES SERVICES
 Route::get('/service',[ControllerServices::class,'services']);
-Route::get('/services',[ControllerServices::class,'listeservices']);
+Route::get('/services',[ControllerServices::class,'listeservices'])->name('serviceliste');
+Route::post('/service',[ControllerServices::class,'addservices']);
+
+
+// DETAILLES DU SERVICE ODOO
+Route::get('/service-odoo',[ControllerServices::class,'odoo'])->name('service.create');
+Route::get('/services-odoo',[ControllerServices::class,'description']);
+Route::post('/service-odoo',[ControllerServices::class,'addservicesodoo'])->name('service.store');
+Route::get('/odoo/edit/{id}', [ControllerServices::class, 'editodoo']);
+Route::post('/edit', [ControllerServices::class, 'addeditodoo']);
+Route::get('/odoo/delete/{id}', [ControllerServices::class, 'deleteodoo']);
+
+
+// DETAILLES DU SERVICE BIGDATA
+Route::get('/service-bigdata',[ControllerServices::class,'bigdata']);
+Route::get('/services-bigdata',[ControllerServices::class,'descriptions']);
+Route::post('/service-bigdata',[ControllerServices::class,'addservicesbigdata']);
+Route::get('/bigdata/edit/{id}', [ControllerServices::class, 'editbigdata']);
+Route::post('/bigdata/edit', [ControllerServices::class, 'addeditbigdata']);
+Route::get('/bigdata/delete/{id}', [ControllerServices::class, 'deletebigdata']);
+
+
+// DETAILLES DU SERVICE CYBER
+Route::get('/service-cyber',[ControllerServices::class,'cyber']);
+Route::get('/services-cyber',[ControllerServices::class,'cybers']);
+Route::post('/service-cyber',[ControllerServices::class,'addservicescyber']);
+Route::get('/cyber/edit/{id}', [ControllerServices::class, 'editcyber']);
+Route::post('/cyber/edit', [ControllerServices::class, 'addeditcyber']);
+Route::get('/cyber/delete/{id}', [ControllerServices::class, 'deletecyber']);
+
+
+// DETAILLES DU SERVICE Formation
+Route::get('/service-formation',[ControllerServices::class,'formation']);
+Route::get('/services-formation',[ControllerServices::class,'formations']);
+Route::post('/service-formation',[ControllerServices::class,'addservicesformation']);
+Route::get('/formation/edit/{id}', [ControllerServices::class, 'editformation']);
+Route::post('/formation/edit', [ControllerServices::class, 'addeditformation']);
+Route::get('/formation/delete/{id}', [ControllerServices::class, 'deleteformation']);
+
+
+// DETAILLES DU SERVICE DEVELOPPEMENT
+Route::get('/service-devweb',[ControllerServices::class,'devweb']);
+Route::get('/services-devweb',[ControllerServices::class,'devwebs']);
+Route::post('/service-devweb',[ControllerServices::class,'addservicesdevweb']);
+Route::get('/devweb/edit/{id}', [ControllerServices::class, 'editdevweb']);
+Route::post('/devweb/edit', [ControllerServices::class, 'addeditdevweb']);
+Route::get('/devweb/delete/{id}', [ControllerServices::class, 'deletedevweb']);
+
+
+// DETAILLES DU SERVICE Boutique
+Route::get('/service-boutique',[ControllerServices::class,'boutique']);
+Route::get('/services-boutique',[ControllerServices::class,'boutiques']);
+Route::post('/service-boutique',[ControllerServices::class,'addservicesboutique']);
+Route::get('/boutique/edit/{id}', [ControllerServices::class, 'editboutique']);
+Route::post('/boutique/edit', [ControllerServices::class, 'addeditboutique']);
+Route::get('/boutique/delete/{id}', [ControllerServices::class, 'deleteboutique']);
+
+
+
+// MODIFICATION ET SUPRESSION DE NOS EXPERTISES
+Route::get('/service-odoo/edit/{id}', [ControllerServices::class, 'editservicesodoo'])->name('service.odoo.edit');
+Route::post('/services/odoo/edit', [ControllerServices::class, 'addeditservicesodoo']);
+Route::get('/service-odoo/delete/{id}', [ControllerServices::class, 'deleteservicesodoo'])->name('service.odoo.delete');
+
+
+///
+Route::post('/contacts',[ControllerContact::class,'addcontacts']);
 Route::get('/about',[ControllerContact::class,'abouts']);
 Route::get('/contact',[ControllerContact::class,'contacts']);
 
-// backend
 
-Route::post('/service',[ControllerServices::class,'addservices']);
-Route::post('/contacts',[ControllerContact::class,'addcontacts']);
+
 

@@ -29,26 +29,31 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+              <a class="nav-link active navig" aria-current="page" href="/">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">A Propos</a>
+              <a class="nav-link navig" href="/about">A Propos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/services">Nos Expertises</a>
+              <a class="nav-link navig" href="/services">Nos Expertises</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link navig" href="/service-odoo">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Formations</a>
+              <a class="nav-link navig" href="#">Formations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">References</a>
+              <a class="nav-link navig" href="#">References</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
+              <a class="nav-link navig" href="/contact">Contactez-Nous</a>
             </li>
+            @auth
+            <li class="nav-item">
+              <a class="nav-link navig" href="#">Contactez</a>
+            </li>
+            @endauth
           </ul>
         </div>
       </div>

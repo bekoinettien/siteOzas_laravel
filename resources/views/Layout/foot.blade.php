@@ -25,16 +25,17 @@
 <body>
   <!-- Carousel -->
   <div class="logo-carousel owl-carousel">
-      <div class="logo-item"><img src="images/part1.jpg" alt="Logo 1" ></div>
-      <div class="logo-item"><img src="images/part2.png" alt="Logo 2"></div>
-      <div class="logo-item"><img src="images/part3.png" alt="Logo 3"></div>
-      <div class="logo-item"><img src="images/part4.png" alt="Logo 4"></div>
-      <div class="logo-item"><img src="images/part5.png" alt="Logo 1" ></div>
-      <div class="logo-item"><img src="images/part6.png" alt="Logo 2"></div>
+      <div class="logo-item"><img src="images/part6.png" alt="Logo 1" ></div>
+      <div class="logo-item"><img src="images/part1.jpg" alt="Logo 2"></div>
+      <div class="logo-item"><img src="images/ref1.png" alt="Logo 3"></div>
+      <div class="logo-item"><img src="images/part20.jpg" alt="Logo 4"></div>
+      <div class="logo-item"><img src="images/part2.png" alt="Logo 1" ></div>
+      <div class="logo-item"><img src="images/ref2.jpeg" alt="Logo 1" ></div>
+      {{-- <div class="logo-item"><img src="images/part6.png" alt="Logo 2"></div>
       <div class="logo-item"><img src="images/part7.png" alt="Logo 3"></div>
       <div class="logo-item"><img src="images/part8.png" alt="Logo 4"></div>
       <div class="logo-item"><img src="images/part9.png" alt="Logo 1" ></div>
-      <div class="logo-item"><img src="images/part10.png" alt="Logo 2"></div>
+      <div class="logo-item"><img src="images/part10.png" alt="Logo 2"></div> --}}
 
   </div>
 

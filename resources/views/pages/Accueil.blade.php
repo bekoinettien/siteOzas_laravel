@@ -110,24 +110,7 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service9.jpeg" alt="" class="img-image" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Boutique et services
-              </h5>
-              <p class="p-exp">
-                Câblage Réseaux et pose de Fibre optique.
-                Vente de matériel et tout accessoire 
-               électronique...</p>
-               <a href="#" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        
+       
         <div class="col-12 col-lg-4 col-sm-4">
           <div class="box ">
             <div class="img-box">
@@ -142,7 +125,29 @@
                 œuvre de l'ERP Odoo dans des entreprises de 
                 diverses tailles, ...
               </p>
-              <a href="#" class="btn btn-primary">Plus d'Infos</a>
+              <a href="/services-odoo" class="btn btn-primary">Plus d'Infos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 col-sm-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/service4.jpeg" alt="" class="img-image" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Offre de services
+                BIG DATA
+                            
+              
+              </h5>
+              <p class="p-exp">
+                La donnée occupe une place centrale dans un 
+                contexte de digitalisation au sein de l'entreprise 
+                de nos jours. Les entreprises s’appuient sur des... 
+                       
+                  </p>
+                  <a href="/services-bigdata" class="btn btn-primary">Plus d'Infos</a>
             </div>
           </div>
         </div>
@@ -163,7 +168,7 @@
                 . Analyse et conseils pour digitalisation...
                
               </p>
-              <a href="#" class="btn btn-primary">Plus d'Infos</a>
+              <a href="/services-devweb" class="btn btn-primary">Plus d'Infos</a>
             </div>
           </div>
         </div>
@@ -184,34 +189,10 @@
                  été aussi... 
                 
               </p>
-              <a href="#" class="btn btn-primary">Plus d'Infos</a>
+              <a href="/services-cyber" class="btn btn-primary">Plus d'Infos</a>
             </div>
           </div>
         </div>
-        
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service4.jpeg" alt="" class="img-image" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Offre de services
-                BIG DATA
-                            
-              
-              </h5>
-              <p class="p-exp">
-                La donnée occupe une place centrale dans un 
-                contexte de digitalisation au sein de l'entreprise 
-                de nos jours. Les entreprises s’appuient sur des... 
-                       
-                  </p>
-                  <a href="#" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        
         <div class="col-12 col-lg-4 col-sm-4">
           <div class="box ">
             <div class="img-box">
@@ -228,12 +209,32 @@
                 en vous offrant des formations pratiques, de ...
                 
               </p>
-              <a href="#" class="btn btn-primary">Plus d'Infos</a>
+              <a href="/services-formation" class="btn btn-primary">Plus d'Infos</a>
             </div>
           </div>
         </div>
+        <div class="col-12 col-lg-4 col-sm-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/service9.jpeg" alt="" class="img-image" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Boutique et services
+              </h5>
+              <p class="p-exp">
+                Câblage Réseaux et pose de Fibre optique.
+                Vente de matériel et tout accessoire 
+               électronique...</p>
+               <a href="/services-boutique" class="btn btn-primary">Plus d'Infos</a>
+            </div>
+          </div>
+        </div>
+        
       </div>
-    </div>
+      <div class="bout">
+        <a href="/services" class=" btn btn-success mod">VOIR PLUS</a>
+       </div> 
   </section>
  {{-- fin presentation des acctivités --}}
   <style>

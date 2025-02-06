@@ -42,6 +42,12 @@
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     
     }
+    .ico-serv{
+        font-size: 14px;
+    }
+    .titre-autres{
+        font-size: 14px;
+    }
     
  }
 
@@ -54,6 +60,9 @@
     .d-block{
         width: 100%;
         height: 250px !important;
+    }
+    .box-service-odoo{
+        width: 100%;
     }
  }
 

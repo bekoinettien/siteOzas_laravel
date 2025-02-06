@@ -1,4 +1,4 @@
-@extends('Layout/Header')
+@extends('Layout/header')
 
 @section('content')
 
@@ -41,14 +41,16 @@
           <div class="box-service ">
             <div>
               <img src="/storage/service/{{ basename($services->image_path) }}" style="max-width: 80px; height: 70px; padding-top:10px">
+
               <h4>{{ $services->titre }}</h4>
               <p>{{ $services->description}}</p>
               <p>{{ $services->created_at}}</p>
             </div>
           </div>
-  
-              
-              
+          <div class="bout">
+           <a href="/service-odoo/edit/{{$services->id}}" class=" btn btn-success mod">MODIFIER</a>
+           <a href="/service-odoo/delete/{{$services->id}}" class=" btn btn-danger sup">SUPPRIMER</a>
+          </div>     
         </div>
         @endforeach
     
