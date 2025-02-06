@@ -38,22 +38,22 @@
               <a class="nav-link navig" href="/services">Nos Expertises</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="/service-odoo">Blog</a>
+              <a class="nav-link navig" href="/blogs">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="#">Formations</a>
+              <a class="nav-link navig" href="/prestations">Formations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="#">References</a>
+              <a class="nav-link navig" href="references">References</a>
             </li>
             <li class="nav-item">
               <a class="nav-link navig" href="/contact">Contactez-Nous</a>
             </li>
-            @auth
+            
             <li class="nav-item">
-              <a class="nav-link navig" href="#">Contactez</a>
+              <a class="nav-link navig" href="/tableau">Dashboard</a>
             </li>
-            @endauth
+            
           </ul>
         </div>
       </div>

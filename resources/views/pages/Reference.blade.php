@@ -1,7 +1,7 @@
 @extends('Layout/headadmin')
 @section('content')
     <section class="section-service1">
-        <form method="POST" action="/service" enctype="multipart/form-data">
+        <form method="POST" action="/reference" enctype="multipart/form-data">
             @csrf
 
         <div class="container-fluid">
@@ -9,7 +9,7 @@
                  
                  <div class="col-lg-12">
                     <div class="form-group mb-4 mt-4">
-                        <label>Image du service</label><br />
+                        <label>Image de la reference</label><br />
                         <input type="file" name="image" required accept="image/*">
                         @error('image')
                         <div class="text text-danger">{{$message}}</div> 
@@ -17,7 +17,7 @@
                          @enderror
                     </div>
                     <div class="form-group mb-4">
-                        <label>Titre du service</label>
+                        <label>Titre de la reference</label>
                         <input type="text" name="titre" class="form-control" name="titre" value="{{ old('titre') }}" placeholder="Nom du service">
                         @error('titre')
                              <div class="text text-danger">{{$message}}</div> 
@@ -30,7 +30,7 @@
                         <div class="text text-danger">{{$message}}</div> 
                         @enderror
                     </div>
-                 <p><button type="submit" class="btn btn-primary">Ajouter le service</button></p>
+                 <p><button type="submit" class="btn btn-primary">Ajouter le blog</button></p>
              </div>
         </div>
      </div>

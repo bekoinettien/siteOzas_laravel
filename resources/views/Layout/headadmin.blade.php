@@ -38,13 +38,13 @@
               <a class="nav-link navig" href="/services">Nos Expertises</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="/service-odoo">Blog</a>
+              <a class="nav-link navig" href="/blogs">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="#">Formations</a>
+              <a class="nav-link navig" href="prestations">Formations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="#">References</a>
+              <a class="nav-link navig" href="references">References</a>
             </li>
             <li class="nav-item">
               <a class="nav-link navig" href="/contact">Contactez-Nous</a>
@@ -68,9 +68,25 @@
         <ul class="nav flex-column">
             <!-- Menu principal -->
             <li class="nav-item">
-              <a href="/service" class="nav-link text-white">NOUVEAU SERVICE</a>
+              <a href="/service" class="nav-link text-white">AJOUTER UN SERVICE</a>
             </li>
               <hr>
+              <li class="nav-item">
+                <a href="/reference" class="nav-link text-white">AJOUTER UNE REFERENCE</a>
+            </li>
+
+            <hr>
+           
+            <li class="nav-item">
+                <a href="/prestation" class="nav-link text-white">AJOUTER UNE PRESTATION</a>
+            </li>
+            <hr>
+
+            <li class="nav-item">
+              <a href="/blog" class="nav-link text-white">AJOUTER UN BOG</a>
+          </li>
+
+          <hr>
             <li class="nav-item">
                 <a href="#" class="nav-link text-white d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#serviceSubmenu" aria-expanded="false" aria-controls="serviceSubmenu">
                     DETAILS DES SERVICES
@@ -105,6 +121,8 @@
             <li class="nav-item">
                 <a href="services-odoo" class="nav-link text-white">LISTE SERVICE</a>
             </li>
+
+            <hr> 
         </ul>
     </div>
     <!-- Main content (Dynamic content area) -->

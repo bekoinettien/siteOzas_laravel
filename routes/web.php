@@ -1,18 +1,52 @@
 <?php
 
 use App\Http\Controllers\ControllerContact;
+use App\Http\Controllers\ControllerFrontEnd;
 use App\Http\Controllers\ControllerServices;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages/Accueil');
 });
-
+Route::get('/tableau', function () {
+    return view('Layout/headadmin');
+});
 
 // ENTREGISTREMENT DES SERVICES
 Route::get('/service',[ControllerServices::class,'services']);
 Route::get('/services',[ControllerServices::class,'listeservices'])->name('serviceliste');
 Route::post('/service',[ControllerServices::class,'addservices']);
+
+
+// ENTREGISTREMENT DES BLOGS
+Route::get('/blog',[ControllerFrontEnd::class,'blog']);
+Route::get('/blogs',[ControllerFrontEnd::class,'listeblog'])->name('blogliste');
+Route::post('/blog',[ControllerFrontEnd::class,'addblog']);
+
+// MODIFICATION ET SUPRESSION DE NOS BLOGS
+Route::get('/blog/edit/{id}', [ControllerFrontEnd::class, 'editblog']);
+Route::post('/blog/edit', [ControllerFrontEnd::class, 'addeditblog']);
+Route::get('/blog/delete/{id}', [ControllerFrontEnd::class, 'deleteblog']);
+
+// ENTREGISTREMENT DES REFERENCES
+Route::get('/reference',[ControllerFrontEnd::class,'reference']);
+Route::get('/references',[ControllerFrontEnd::class,'listereference'])->name('blogreference');
+Route::post('/reference',[ControllerFrontEnd::class,'addreference']);
+
+// MODIFICATION ET SUPRESSION DE NOS REFERENCES
+Route::get('/reference/edit/{id}', [ControllerFrontEnd::class, 'editreference']);
+Route::post('/reference/edit', [ControllerFrontEnd::class, 'addeditreference']);
+Route::get('/reference/delete/{id}', [ControllerFrontEnd::class, 'deletereference']);
+
+// ENTREGISTREMENT DES PRESTATIONS
+Route::get('/prestation',[ControllerFrontEnd::class,'prestation']);
+Route::get('/prestations',[ControllerFrontEnd::class,'listeprestation'])->name('blogreference');
+Route::post('/prestation',[ControllerFrontEnd::class,'addprestation']);
+
+// MODIFICATION ET SUPRESSION DE NOS PRESTATIONS
+Route::get('/prestation/edit/{id}', [ControllerFrontEnd::class, 'editprestation']);
+Route::post('/prestation/edit', [ControllerFrontEnd::class, 'addeditprestation']);
+Route::get('/prestation/delete/{id}', [ControllerFrontEnd::class, 'deleteprestation']);
 
 
 // DETAILLES DU SERVICE ODOO
