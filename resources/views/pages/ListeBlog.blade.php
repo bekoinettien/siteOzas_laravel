@@ -48,8 +48,10 @@
             </div>
           </div>
           <div class="bout">
+            @if(auth()->check() && auth()->user()->is_admin == 3)
            <a href="/blog/edit/{{$blogs->id}}" class=" btn btn-success mod">MODIFIER</a>
            <a href="/blog/delete/{{$blogs->id}}" class=" btn btn-danger sup">SUPPRIMER</a>
+           @endif
           </div>     
         </div>
         @endforeach

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ControllerContact;
 use App\Http\Controllers\ControllerFrontEnd;
 use App\Http\Controllers\ControllerServices;
+use App\Http\Controllers\ControllerUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -115,6 +116,13 @@ Route::post('/contacts',[ControllerContact::class,'addcontacts']);
 Route::get('/about',[ControllerContact::class,'abouts']);
 Route::get('/contact',[ControllerContact::class,'contacts']);
 
+////////USERS/////
+
+Route::get('/register',[ControllerUser::class,'register']);
+Route::get('/login',[ControllerUser::class,'login']);
+Route::post('/register',[ControllerUser::class,'inscription']);
+Route::post('/login',[ControllerUser::class,'connexion'])->name('connexion');
+Route::get('deconnexion', [ControllerUser::class,'deconnexion'])->name('deconnexion');
 
 
 

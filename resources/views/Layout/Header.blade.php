@@ -49,11 +49,11 @@
             <li class="nav-item">
               <a class="nav-link navig" href="/contact">Contactez-Nous</a>
             </li>
-            
+            @if(auth()->check() && auth()->user()->is_admin == 3)
             <li class="nav-item">
               <a class="nav-link navig" href="/tableau">Dashboard</a>
             </li>
-            
+            @endif
           </ul>
         </div>
       </div>

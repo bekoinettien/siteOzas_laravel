@@ -84,7 +84,9 @@
   
               
           <div class="bout">
+            @if(auth()->check() && auth()->user()->is_admin == 3)
             <a href="/boutique/edit/{{$services_boutique->id}}" class=" btn btn-success mod">MODIFIER</a>
+            @endif
             {{-- <a href="/service-odoo/delete/{{$services->id}}" class=" btn btn-danger sup">SUPPRIMER</a> --}}
            </div> 
         </div>
