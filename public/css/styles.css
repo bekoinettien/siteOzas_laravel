@@ -48,7 +48,18 @@
     .titre-autres{
         font-size: 14px;
     }
-    
+    .card{
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        margin-top: 20px; 
+        max-width: 150px;
+        height: 150px;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+    .card-img-top{
+        height: 150px !important;
+        width: 150px;
+      }
  }
 
 

@@ -96,7 +96,8 @@
   padding-bottom: 10px;
 }
 .card-img-top{
-  height: 250px !important;
+  height: 200px !important;
+  width: 200px;
 }
 
 .card-title{

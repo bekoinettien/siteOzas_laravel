@@ -1,22 +1,22 @@
 @extends('Layout/Header')
 
 @section('content')
-<div id="carouselExampleDark" class="carousel carousel-dark slide">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" >
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="images/accueil1.jpg" class="d-block" alt="...">
+      <div class="carousel-item active" data-bs-interval="1000">
+        <img src="images/reference.png" class="d-block" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Some representative placeholder content for the first slide.</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="images/accueil1.jpg" class="d-block " alt="...">
+        <img src="images/formation.png" class="d-block " alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Some representative placeholder content for the second slide.</p>
@@ -226,6 +226,7 @@
                 Câblage Réseaux et pose de Fibre optique.
                 Vente de matériel et tout accessoire 
                électronique...</p>
+               
                <a href="/services-boutique" class="btn btn-primary">Plus d'Infos</a>
             </div>
           </div>
@@ -288,7 +289,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-lg-3 col-sm-4">
+      <div class="col-6 col-lg-3 col-sm-6">
     
           <div class="card" >
               <div class="card-body">
@@ -304,7 +305,7 @@
             </div>
           </div>
       </div>
-      <div class="col-12 col-lg-3 col-sm-4">
+      <div class="col-6 col-lg-3 col-sm-6">
         <div class="card" >
           <div class="card-body">
               <h5 class="card-title">Bekoin Etienne</h5>
@@ -320,7 +321,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-lg-3 col-sm-4">
+      <div class="col-6 col-lg-3 col-sm-6">
         <div class="card">
           <div class="card-body">
               <h5 class="card-title">Ines Gregorienne</h5>
@@ -335,7 +336,7 @@
             </div>
         </div>
       </div>
-      <div class="col-12 col-lg-3 col-sm-4">
+      <div class="col-6 col-lg-3 col-sm-6">
           <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Yao Ruth</h5>
