@@ -34,7 +34,7 @@
                         Adresse
                       </h5>
                       <p class="p-exp-contact">
-                        II Plateaux 7ème Tranche Rue L100, lot 3656 
+                        II Plateaux 8ième Tranche Rue L84, lot 707 îlot 45 
                       </p>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                                 Adresse Email
                               </h5>
                               <p class="p-exp-contact">
-                                contacts@tds.ci   
+                                contacts@oozas.com  
                               </p>
                             </div>
                 </div>

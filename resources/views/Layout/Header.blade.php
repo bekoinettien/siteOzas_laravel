@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="{{asset('css/Monstyle/styleservice.css')}}">
     <link rel="stylesheet" href="{{asset('css/Monstyle/styleabout.css')}}">
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <title>Ozas</title>
+    <title>Oozas</title>
   
-    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+    <link rel="icon" type="image/x-icon" href="images/logo1.png">
    
     <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
       <div class="container-fluid">
@@ -25,8 +26,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         
-        <a class="navbar-brand " href="/"> <img src="images/logo.jpg" alt="tdsci" class="logo" style="height: 35px"> </a>
+        <a class="navbar-brand " href="/"> <img src="images/logo1.png" alt="tdsci" class="logo" style="height: 35px"> </a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active navig" aria-current="page" href="/">Accueil</a>
@@ -67,7 +69,7 @@
 
 </head>
 <body>
- 
+  
       @yield('content')
       <button id="back-to-top" class="btn btn-primary" title="Revenir en haut">
         ↑

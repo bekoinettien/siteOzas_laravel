@@ -40,65 +40,18 @@
     </button>
   </div>
 {{-- DEBUT PRESENTATION --}}
-  <section>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6 col-lg-3 col-sm-3">
-          <div class="box-pres">
-            <div class="img-box-pres">
-              <img src="images/crm.png" alt="" class="img-pres" />
-            </div>
-            <div class="detail-box">
-              <h5 class="text">
-                support
-              </h5>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3 col-sm-3">
-          <div class="box-pres">
-            <div class="img-box-pres">
-              <img src="images/pres1.jpg" alt="" class="img-pres" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                support
-              </h5>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3 col-sm-3">
-          <div class="box-pres">
-            <div class="img-box-pres">
-              <img src="images/pres1.jpg" alt="" class="img-pres" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                support
-              </h5>
-             
-            </div>
-          </div>
-        </div>
+{{-- <section class="animation-section">
+  <!-- Column 1: Image -->
+  <div class="col-lg-6 image-container">
+      <img src="images/accueil1.jpg" alt="Image animée">
+  </div>
 
-        <div class="col-6 col-lg-3 col-sm-3">
-          <div class="box-pres">
-            <div class="img-box-pres">
-              <img src="images/pres1.jpg" alt="" class="img-pres" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                support
-              </h5>
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Column 2: Text -->
+  <div class="col-lg-6 text-container">
+      <h1>Bienvenue dans notre site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+  </div>
+</section> --}}
 
 {{-- FIN PRESENTATION --}}
 

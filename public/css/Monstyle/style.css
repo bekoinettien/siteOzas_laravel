@@ -99,7 +99,7 @@ ul {
 
 .navbar-expand-lg
 {
-    background-color: white !important;
+    background-color: rgb(185, 10, 10) !important;
 }
 .navbar {
     position: fixed !important;
@@ -329,7 +329,54 @@ span{
     margin-left: 10px;
  }
  
-////user///
-.user-body{
-    background-color: darkgrey !important;
+ .animation-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Image animation */
+.image-container img {
+    width: 100%;
+    max-width: 500px;
+    animation: slide-down  1.5s ease-out forwards;
+     // animation: slide-in-left 1.5s ease-out forwards;
+    opacity: 0; /* Hidden initially */
+}
+
+/* Text animation */
+.text-container {
+    max-width: 500px;
+    animation: slide-up 1.5s ease-out forwards;
+   // animation: slide-in-right 1.5s ease-out forwards;
+
+    opacity: 0; /* Hidden initially */
+}
+
+/* Keyframes for sliding from left */
+@keyframes slide-down  {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for sliding from right */
+@keyframes slide-up  {
+    from {
+        transform: translateY(100%);
+       // transform: translateyX(100%); RIGHT
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
