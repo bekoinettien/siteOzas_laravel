@@ -1,22 +1,25 @@
 @extends('Layout/headadmin')
 @section('content')
     <section class="section-service1">
-        <form method="POST" action="/prestation/edit/" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('prestation.add') }}" enctype="multipart/form-data">
             @csrf
 
         <div class="container-fluid">
-             <div class="row">
-                 <div class="col-lg-5">
-                   <img src="images/blog1.jpg" alt="" width="100%" height="350px">
-                 </div>
-                 <div class="col-lg-7">
-                    <div class="form-group mb-4 mt-4">
-                        <label>Image de la Prestation</label><br />
-                        <input type="file" name="image" required accept="image/*" value="{{$prestation->image}}">
+             
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image du service</label>
+                        <input type="file" name="image" class="form-control">
+                        
+                        @if($prestation->image_path)
+                            <div class="mt-2">
+                                <p>Image actuelle :</p>
+                                <img src="{{ asset('storage/' . $prestation->image_path) }}" alt="Image du service" style="max-width: 200px; max-height: 200px;">
+                            </div>
+                        @endif
+                        
                         @error('image')
-                        <div class="text text-danger">{{$message}}</div> 
-                            
-                         @enderror
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group mb-4">
                         <input type="text" name="id" class="form-control" value="{{$prestation->id}}" style="display: none">
@@ -38,8 +41,7 @@
                    
                     <p><button type="submit" class="btn btn-primary">Modifier le service</button></p> 
                    
-             </div>
-        </div>
+            
      </div>
 </form>
     </section>

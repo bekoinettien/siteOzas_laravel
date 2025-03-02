@@ -4,38 +4,41 @@ use App\Http\Controllers\ControllerContact;
 use App\Http\Controllers\ControllerFrontEnd;
 use App\Http\Controllers\ControllerServices;
 use App\Http\Controllers\ControllerUser;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\IsAdmin;
 
-Route::get('/', function () {
-    return view('pages/Accueil');
-});
+Route::get('/',[ControllerFrontEnd::class,'home'])->name('home');
+Route::post('/news',[ControllerFrontEnd::class,'addactualite']);
+Route::post('/actualite/add', [ControllerFrontEnd::class, 'addeditactualite'])->name('actualite.add');
 
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // ENTREGISTREMENT DES SERVICES
 
 Route::get('/services',[ControllerServices::class,'listeservices'])->name('serviceliste');
 Route::post('/service',[ControllerServices::class,'addservices']);
-Route::post('/services/odoo/edit', [ControllerServices::class, 'addeditservicesodoo']);
+Route::post('/services/odoo/edit', [ControllerServices::class, 'addeditservicesodoo'])->name('service.add');
 
 
 // ENTREGISTREMENT DES BLOGS
 
 Route::get('/blogs',[ControllerFrontEnd::class,'listeblog'])->name('blogliste');
 Route::post('/blog',[ControllerFrontEnd::class,'addblog']);
-Route::post('/blog/edit', [ControllerFrontEnd::class, 'addeditblog']);
+Route::post('/blog/add', [ControllerFrontEnd::class, 'addeditblog'])->name('blog.add');
 
 // ENTREGISTREMENT DES REFERENCES
 
 Route::get('/references',[ControllerFrontEnd::class,'listereference'])->name('blogreference');
 Route::post('/reference',[ControllerFrontEnd::class,'addreference']);
-Route::post('/reference/edit', [ControllerFrontEnd::class, 'addeditreference']);
+Route::post('/reference/add', [ControllerFrontEnd::class, 'addeditreference'])->name('reference.add');
 
 // ENTREGISTREMENT DES PRESTATIONS
 
-Route::get('/prestations',[ControllerFrontEnd::class,'listeprestation'])->name('blogreference');
+Route::get('/prestations',[ControllerFrontEnd::class,'listeprestation'])->name('presta');
 Route::post('/prestation',[ControllerFrontEnd::class,'addprestation']);
-Route::post('/prestation/edit', [ControllerFrontEnd::class, 'addeditprestation']);
+Route::post('/prestation/add', [ControllerFrontEnd::class, 'addeditprestation'])->name('prestation.add');
 
 // DETAILLES DU SERVICE ODOO
 Route::get('/services-odoo',[ControllerServices::class,'description']);
@@ -99,8 +102,6 @@ Route::middleware([IsAdmin::class])->group(function () {
     Route::get('/service-bigdata',[ControllerServices::class,'bigdata']);
     Route::get('/bigdata/edit/{id}', [ControllerServices::class, 'editbigdata']);
 
-
-
     Route::get('/blog/edit/{id}', [ControllerFrontEnd::class, 'editblog']);
     Route::get('/blog/delete/{id}', [ControllerFrontEnd::class, 'deleteblog']);
     Route::get('/blog',[ControllerFrontEnd::class,'blog']);
@@ -129,6 +130,11 @@ Route::middleware([IsAdmin::class])->group(function () {
     Route::get('/service-boutique',[ControllerServices::class,'boutique']);
     Route::get('/boutique/edit/{id}', [ControllerServices::class, 'editboutique']);
     
+
+    Route::get('/news',[ControllerFrontEnd::class,'actualite']);
+    Route::get('/actualite/edit/{id}', [ControllerFrontEnd::class, 'editactualite']);
+    Route::get('/actualite/delete/{id}', [ControllerFrontEnd::class, 'deleteactualite']);
+   
   
     //////////////////
     

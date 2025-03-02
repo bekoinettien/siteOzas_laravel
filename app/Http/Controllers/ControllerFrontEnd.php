@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestService;
+use App\Models\Actualite;
 use App\Models\Blog;
 use App\Models\Prestation;
 use App\Models\Reference;
@@ -10,9 +11,88 @@ use Illuminate\Http\Request;
 
 class ControllerFrontEnd extends Controller
 {
+    public function home(){
+        $actualite=Actualite::all();
+        return view('pages/Accueil' , compact('actualite'));
+    }
+
+    ///ACTUALITES
+    public function actualite(){
+        return view('/pages/Actualite');
+    }
+    public function addactualite(Actualite $actualite , RequestService $request){
+       
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('actualite', 'public');
+            $actualite->image_path = $imagePath;
+            
+        }
+        // Attribuer les valeurs et sauvegarder
+        $actualite->titre = $request->titre;
+        $actualite->description = $request->description;
+        $actualite->save();
+
+        return redirect()->route('home');
+    
+    }
+    //MODIFICATION DE BLOG
+    public function editactualite( $id)
+    {
+        // Rechercher le service dans la base de données
+        $actualite = Actualite::find($id);
+        return view('/pages/updateActualite', compact('actualite'));
+
+    }
+    public function addeditactualite( Request $request){
+
+        $request->validate([
+            'titre' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable',
+            'image' => 'image',
+            'image' => 'mimes:jpeg,png,jpg,gif',
+        ]);
+
+        $actualite = Actualite::find($request->id);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('actualite', 'public');
+            $actualite->image_path = $imagePath;
+            
+        }
+            // Attribuer les valeurs et sauvegarder
+            $actualite->titre = $request->titre;
+            $actualite->description = $request->description;
+            $actualite->update();
+        return redirect('/');
+    }
+
+// SUPRESSION DE BLOG
+    public function deleteactualite($id)
+    {
+        // Rechercher le service dans la base de données
+        $actualite = Actualite::find($id);
+
+        if (!$actualite) {
+            return redirect()->back()->with('error', 'Service introuvable.');
+        }
+
+        // Supprimer l'image associée au service
+        if ($actualite->path_image && file_exists(storage_path('app/public/' . $actualite->path_image))) {
+            unlink(storage_path('app/public/' . $actualite->path_image));
+        }
+
+        // Supprimer le service de la base de données
+        $actualite->delete();
+
+        return redirect()->back()->with('success', 'Service supprimé avec succès.');
+    }   
+
+
+
     ///AJOUT DES BLOGS
     public function blog(){
-        return view('/pages/blog');
+        return view('/pages/Blog');
     }
 
     public function listeblog(){
@@ -92,7 +172,7 @@ public function deleteblog($id)
 
 ///AJOUT DES REFERENCE
 public function reference(){
-    return view('/pages/reference');
+    return view('/pages/Reference');
 }
 
 public function listereference(){
@@ -171,7 +251,7 @@ return redirect()->back()->with('success', 'Service supprimé avec succès.');
 
 ///AJOUT DES PRESTATION
 public function prestation(){
-    return view('/pages/prestation');
+    return view('/pages/Prestation');
 }
 
 public function listeprestation(){

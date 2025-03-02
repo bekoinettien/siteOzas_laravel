@@ -1,4 +1,4 @@
-@extends('Layout/header')
+@extends('Layout/Header')
 
 @section('content')
 
@@ -40,7 +40,7 @@
         <div class="col-sm-6 col-md-4 col-lg-4">
           <div class="box-service ">
             <div>
-              <img src="/storage/service/{{ basename($services->image_path) }}" style="max-width: 80px; height: 70px; padding-top:10px">
+              <img src="/storage/service/{{ basename($services->image_path) }}" style="max-width: 50px; height: 50px; padding-top:10px">
 
               <h4>{{ $services->titre }}</h4>
               <p>{{ $services->description}}</p>

@@ -99,7 +99,7 @@ ul {
 
 .navbar-expand-lg
 {
-    background-color: rgb(185, 10, 10) !important;
+    background-color: rgb(255, 255, 255) !important;
 }
 .navbar {
     position: fixed !important;
@@ -124,7 +124,7 @@ ul {
 
 .navig
 {
-    color: rgb(0, 0, 0) !important;
+    color: rgb(9, 9, 9) !important;
     font-size: 16px !important;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -226,7 +226,7 @@ span{
 
 
 .services-1{
-    background-color: darkblue;
+    background-color: rgb(255, 255, 255);
     border-right: 15px;
     margin-top: -150px;
     border-top-right-radius: 50px;
@@ -234,11 +234,12 @@ span{
     font-family: 'Times New Roman', Times, serif;
     font-weight: normal;
     font-style: oblique;
+    color: rgb(12, 0, 0);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     padding-bottom: 25px;
 }
 .section-1-titre{
-    color: white;
+    color: rgb(12, 0, 0);
     font-size: 30px;
     padding-top: 30px;
 }
@@ -335,8 +336,33 @@ span{
     align-items: center;
     height: 100vh;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: gainsboro;
+   
+   
 }
+.docs{
+    text-align: center;
+}
+.img-annim1{
+    height: 210px;
+    width: 100% !important;
+}
+.img-annim2{
+    height: 210px;
+    width: 100% !important;
+
+}
+.img-annim3{
+    height: 210px;
+    width: 200px !important;
+    margin-top: 15px;
+}
+.img-annim4{
+    height: 210px;
+    width: 200px !important;
+    margin-top: 15px;
+}
+
 
 /* Image animation */
 .image-container img {
@@ -349,11 +375,14 @@ span{
 
 /* Text animation */
 .text-container {
-    max-width: 500px;
+    width: 100%;
+    max-width:100%;
     animation: slide-up 1.5s ease-out forwards;
    // animation: slide-in-right 1.5s ease-out forwards;
-
+  // background-image: url(/images/accueil1.jpg);
     opacity: 0; /* Hidden initially */
+    font-size: 1_px !important;
+  
 }
 
 /* Keyframes for sliding from left */
@@ -380,3 +409,94 @@ span{
         opacity: 1;
     }
 }
+
+/* Conteneur de l'animation */
+.titre-img1 {
+    position: absolute;
+    padding-top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+/* Animation pour le titre */
+.text11 {
+    font-size: 45px; /* Ajustez la taille du texte si nécessaire */
+    font-weight: bold;
+    margin-bottom: 15px;
+    animation: slideDown 1.5s ease-out; /* Animation de descente */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+}
+
+/* Animation pour les boutons */
+.btn {
+    margin: 5px;
+    animation: slideIn 1.5s ease-out;
+    animation-delay: 1s; /* Retard pour que l'animation démarre après le titre */
+    animation-fill-mode: both; /* Conserve la position finale après l'animation */
+}
+
+/* Définition de l'animation du titre */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px); /* Démarre hors de l'écran vers le haut */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Se termine à la position normale */
+        opacity: 1;
+    }
+}
+
+/* Définition de l'animation des boutons */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50px); /* Démarre à gauche */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Se termine à la position normale */
+        opacity: 1;
+    }
+}
+/* Style pour l'image avec superposition sombre */
+.carousel-item img {
+    filter: brightness(50%); /* Rend l'image plus sombre */
+}
+
+/* Alternativement, utilisez une superposition avec un pseudo-élément */
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(156, 145, 145, 0.366); /* Couche sombre semi-transparente */
+    z-index: 1;
+}
+
+/* Conteneur de texte au-dessus de l'image */
+.titre-img1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2; /* Au-dessus de la superposition */
+}
+
+.icone_ente{
+    width: 45px !important;
+    height: 45px !important;
+}
+
+
+

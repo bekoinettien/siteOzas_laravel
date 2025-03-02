@@ -368,7 +368,7 @@ public function addeditservicesodoo( Request $request){
     $request->validate([
         'titre' => 'required|string|max:255',
         'description' => 'required|string',
-        'image' => 'nullable',
+        
         'image' => 'image',
         'image' => 'mimes:jpeg,png,jpg,gif',
     ]);

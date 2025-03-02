@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.tiny.cloud/1/pe39l2sfy0q11x40yhafl5p8kyn1q126z422joi8axiwz8dx/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
 
     <title>Ozas</title>
   
@@ -41,10 +43,10 @@
               <a class="nav-link navig" href="/blogs">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="prestations">Formations</a>
+              <a class="nav-link navig" href="/prestations">Formations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navig" href="references">References</a>
+              <a class="nav-link navig" href="/references">References</a>
             </li>
             <li class="nav-item">
               <a class="nav-link navig" href="/contact">Contactez-Nous</a>
@@ -84,10 +86,15 @@
 
             <li class="nav-item">
               <a href="/blog" class="nav-link text-white">AJOUTER UN BOG</a>
-          </li>
+           </li>
 
           <hr>
-            <li class="nav-item">
+          <li class="nav-item">
+            <a href="/news" class="nav-link text-white">AJOUTER UNE ACTUALITE</a>
+         </li>
+
+        <hr>
+            {{-- <li class="nav-item">
                 <a href="#" class="nav-link text-white d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#serviceSubmenu" aria-expanded="false" aria-controls="serviceSubmenu">
                     DETAILS DES SERVICES
                     <i class="fas fa-chevron-down"></i>
@@ -117,7 +124,7 @@
                 </div>
             </li>
             <hr>
-           
+            --}}
             <li class="nav-item">
                 <a href="services-odoo" class="nav-link text-white">LISTE SERVICE</a>
             </li>

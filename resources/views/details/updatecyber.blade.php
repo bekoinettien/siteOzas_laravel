@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="service-odoo1">
-    <h1 class="text-center">Ajouter Les details de BIG DATA</h1>
+    <h1 class="text-center">Ajouter Les details de Securité</h1>
 
     <form method="POST" action="/cyber/edit" enctype="multipart/form-data">
         @csrf
@@ -10,7 +10,15 @@
 
         <div class="mb-3">
             <label for="image" class="form-label">Image du service</label>
-            <input type="file" name="image" class="form-control" required>
+            <input type="file" name="image" class="form-control">
+            
+            @if($service_cyber->path_image)
+                <div class="mt-2">
+                    <p>Image actuelle :</p>
+                    <img src="{{ asset('storage/' . $service_cyber->path_image) }}" alt="Image du service" style="max-width: 200px; max-height: 200px;">
+                </div>
+            @endif
+            
             @error('image')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -32,7 +40,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Ajouter le service</button>
+        <button type="submit" class="btn btn-primary">Modifier CyberSécurité</button>
     </form>
 </section>
 @endsection

@@ -69,14 +69,15 @@
     <div class="row">
         <div class="col-lg-5"> 
             <div class="imag-foot">
-                <img src="images/logo.jpg" alt="" class="image-foot">
+                <img src="images/logo1.png" alt="" class="image-foot">
             </div>
-            <p class="services-foot">Technologies Du Sud (TDS) a été fondé en 2013. 
-                C’est un Cabinet de consultance exerçant dans les domaines du
-                développement de logiciel, d’intégration de solution de Gestion 
-                basé sur l’ERP Odoo et de formation continue. Ses fondateurs sont
-                des experts en système d’information issus des grands cabinets de
-                Consulting locaux et Européens.
+            <p class="services-foot">
+              Nos experts sont généreux, ils donnent tout leur savoir-faire. Vous allez aimer travailler avec nous.
+
+Avec notre « ancêtre » AfricaLand fondée en 1998, notre « mère » Technologies Du Sud fondé en 2013, c'est plus de 25 années d'expérience capitalisées que nous sommes heureux de mettre à votre disposition sous un tout nouveau label : Oozas
+
+Nous avons réalisé de grands projets dans l'administration ivoiriennes (aux Douanes, au Trésor, au Ministère de la Fonction Publique, au BNETD), ainsi que chez de nombreux privés. Nous sommes partenaire Odoo depuis 2011
+
                 </p> 
         </div>
         <div class="col-lg-3">
@@ -118,15 +119,15 @@
             <ul>
                 <li>  
                     <i class="fa-solid fa-phone"></i>
-                    <p>+225 27 22 502 238</p>
+                    <p>+225 07 58 31 93 30</p>
                 </li>
                 <li>
                     <i class="fa-solid fa-location-dot"></i>
-                    <p> II Plateaux 7ème Tranche Rue L100, lot 3656 </p>
+                    <p> II Plateaux 8ième Tranche Rue L84, lot 707 îlot 45 </p>
                 </li>
                 <li>
                     <i class="fa-solid fa-envelope"></i>
-                    <p>contacts@tds.ci</p>
+                    <p> contacts@oozas.com  </p>
                 </li>
             </ul>
         </div>

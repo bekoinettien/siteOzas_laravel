@@ -2,18 +2,27 @@
 
 @section('content')
 <section class="service-odoo1">
-    <h1 class="text-center">Ajouter un Service</h1>
+    <h1 class="text-center">Ajouter le details de Odoo</h1>
 
     <form method="POST" action="/edit" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="id" value="{{ $service_odoo->id }}" style="display: none">
         <div class="mb-3">
             <label for="image" class="form-label">Image du service</label>
-            <input type="file" name="image" class="form-control" required value="{{$service_odoo->image}}">
+            <input type="file" name="image" class="form-control">
+            
+            @if($service_odoo->path_image)
+                <div class="mt-2">
+                    <p>Image actuelle :</p>
+                    <img src="{{ asset('storage/' . $service_odoo->path_image) }}" alt="Image du service" style="max-width: 200px; max-height: 200px;">
+                </div>
+            @endif
+            
             @error('image')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+
 
         <div class="mb-3">
             <label for="titre" class="form-label">Nom du service</label>
@@ -31,7 +40,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Ajouter le service</button>
+        <button type="submit" class="btn btn-primary">Modifier Odoo</button>
     </form>
 </section>
 @endsection

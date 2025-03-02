@@ -1,60 +1,137 @@
 @extends('Layout/Header')
 
 @section('content')
-<div id="carouselExampleDark" class="carousel carousel-dark slide" >
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="1000">
-        <img src="images/reference.png" class="d-block" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="images/formation.png" class="d-block " alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="images/accueil1.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5 >Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active " data-bs-interval="10000">
+      <img src="images/AT2.jpg" class="d-block w-100 tres " alt="...">
+      <div class="titre-img1 container">
+        <h3 class="text11">
+          Odoo la solution ERP idéale pour tous vos problèmes de gestion
+           d'entreprise, Complète, Simple et abordable. 
+           <span>Oozas nous sommes à vos côtés pour vous aider à bien
+         réussir votre implémentation</span>
+        </h3>
+      </br>
+     
+         <div>
+          <a href="/services-odoo" class="btn btn-primary">Savoir Plus</a>
+          <a href="/contact" class="btn btn-success">Contactez-Nous</a>  
+         </div>
+            
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="carousel-item" data-bs-interval="10000">
+      <img src="images/BUS1.jpg" class="d-block w-100  tres " alt="...">
+      <div class="titre-img1 container">
+        <h3 class="text11">
+          Sociétés de transport, faites du voyage dans vos véhicules, 
+          un expérience inoubliable...
+          avec notre système de  réservation et de gestion des passagers
+        </h3>
+      </br>
+      <p class="">Nous vous proposons des formations sur mesures</p>
+        <a href="/services" class="btn btn-primary">Savoir Plus</a>
+      <a href="/contact" class="btn btn-success">Contactez-Nous</a>        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/ERP.webp" class="d-block w-100  tres  " alt="...">
+      <div class="titre-img1 container">
+        <h1 class="text11">
+          Odoo pour la Fabrication
+          Tout ce dont vous avez besoin en une seule plateforme, rapide et
+           facile à utiliser.
+            MRP + MES + PLM + Qualité + Atelier + Maintenance
+        </h1>
+      </br>
+      <p class="">Nous vous proposons des formations sur mesures</p>
+      <a href="/services" class="btn btn-primary">Savoir Plus</a>
+      <a href="/contact" class="btn btn-success">Contactez-Nous</a>        
+      </div>
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<section class="docs">
+ {{-- <a href="document/CV_BEKOIN.pdf" download="devis.pdf"> <i class="fa-solid fa-cloud-arrow-down">azert</i></a> --}}
+  {{-- <a href="document/CV_BEKOIN.pdf" class="btn btn-primary" download="devis.pdf">
+    Télécharger le devis
+</a>   --}}
+</section>
 {{-- DEBUT PRESENTATION --}}
-{{-- <section class="animation-section">
+<section class="animation-section">
   <!-- Column 1: Image -->
   <div class="col-lg-6 image-container">
-      <img src="images/accueil1.jpg" alt="Image animée">
+      <img src="images/act1.jpg" alt="Image animée" class="img-annim1">
+      <img src="images/act3.jpg" alt="Image animée" class="img-annim2">
+      {{-- <img src="images/act2.png" alt="Image animée" class="img-annim3">
+      <img src="images/act4.jpg" alt="Image animée" class="img-annim4"> --}}
   </div>
 
   <!-- Column 2: Text -->
   <div class="col-lg-6 text-container">
-      <h1>Bienvenue dans notre site</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      <p>
+        Domaines d'expertise :
+        Nous intervenons dans divers secteurs des NTIC, notamment :
+        Développement d'applications : Conception de logiciels sur mesure, développement d'applications web et mobiles.
+        Solutions Cloud et hébergement : Migration vers le cloud, 
+        hébergement sécurisé et gestion de données. <br>
+        Sécurité informatique : Protection des systèmes d'information, audit de sécurité, mise en place de solutions de cybersécurité.
+        Réseaux et télécommunications : Installation, maintenance et optimisation des réseaux d'entreprise.
+        Intelligence artificielle et analyse de données : Développement d'algorithmes pour la prise de décision et la valorisation des données.
+        Formation et accompagnement : Sensibilisation aux outils numériques, formations en bureautique, gestion des réseaux, et solutions ERP.<br>
+        Nos valeurs :
+        Chez Oozs Technologies, nous nous engageons à :<br>
+        Innover : Nous utilisons les technologies les plus récentes pour proposer des solutions modernes et performantes.
+        Collaborer : Nous plaçons nos clients au centre de nos priorités en travaillant main dans la main pour atteindre leurs objectifs.
+        Protéger : Nous mettons un point d'honneur à sécuriser vos données et garantir leur confidentialité.
+      </p>
   </div>
-</section> --}}
-
+ 
+</section>
 {{-- FIN PRESENTATION --}}
 
+{{-- debut evenement --}}
+<section>
+  <div class="container">
+    <div class="titre">
+      <h2> NOS  <span>ACTUALITES</span></h2>
+    </div>
+    <div class="row">
+    
+      @foreach($actualite as $index => $actualites)
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="box-service ">
+          <div>
+            <img src="/storage/actualite/{{ basename($actualites->image_path) }}" style="max-width: 280px; height: 150px; padding-top:10px">
+
+            <h4>{{ $actualites->titre }}</h4>
+            <p>{{ $actualites->description}}</p>
+            <p>{{ $actualites->created_at}}</p>
+          </div>
+        </div>
+        <div class="bout">
+          @if(auth()->check() && auth()->user()->is_admin == 3)
+         <a href="/actualite/edit/{{$actualites->id}}" class=" btn btn-success mod">MODIFIER</a>
+         <a href="/actualite/delete/{{$actualites->id}}" class=" btn btn-danger sup">SUPPRIMER</a>
+         @endif
+        </div>     
+      </div>
+      @endforeach
+  
+    </div>
+
+  </div>
+</section>
+{{-- fin evenement --}}
 
   {{-- section de la presentation des activites --}}
   <section>
@@ -97,7 +174,7 @@
               <p class="p-exp">
                 La donnée occupe une place centrale dans un 
                 contexte de digitalisation au sein de l'entreprise 
-                de nos jours. Les entreprises s’appuient sur des... 
+                de nos jours... 
                        
                   </p>
                   <a href="/services-bigdata" class="btn btn-primary">Plus d'Infos</a>
@@ -138,8 +215,7 @@
               <p class="p-exp">
                 La cybersécurité demeure un domaine 
                 incontournable. Avec l’augmentation des 
-                cyberattaques, protéger les systèmes informatiques n’a jamais
-                 été aussi... 
+                cyberattaques,... 
                 
               </p>
               <a href="/services-cyber" class="btn btn-primary">Plus d'Infos</a>
@@ -159,7 +235,7 @@
               <p class="p-exp">
                 Technologies du Sud vous accompagne dans le 
                 développement des vos compétences internes, 
-                en vous offrant des formations pratiques, de ...
+                en vous offrant...
                 
               </p>
               <a href="/services-formation" class="btn btn-primary">Plus d'Infos</a>
@@ -217,16 +293,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <p class="services-1"><span class="section-1-titre">Qui Sommes Nous!</span><br>Technologies Du Sud (TDS) a été fondé en 2013. 
-                  C’est un Cabinet de consultance exerçant dans les domaines du
-                   développement de logiciel, d’intégration de solution de Gestion 
-                   basé sur l’ERP Odoo et de formation continue. Ses fondateurs sont
-                    des experts en système d’information issus des grands cabinets de
-                     Consulting locaux et Européens.
-                  Nos domaines d’activité couvrent aussi l’Audit de système
-                   d’information, la planification stratégique et les schémas
-                    directeurs, la rédaction de cahier des charges, la maîtrise 
-                    d’ouvrage et la gestion de projet.
+                <p class="services-1"><span class="section-1-titre">Qui Sommes Nous!</span><br>
+                  Nos experts sont généreux, ils donnent tout leur savoir-faire. Vous allez aimer travailler avec nous.
+
+Avec notre « ancêtre » AfricaLand fondée en 1998, notre « mère » Technologies Du Sud fondé en 2013, c'est plus de 25 années d'expérience capitalisées que nous sommes heureux de mettre à votre disposition sous un tout nouveau label : Oozas
+
+Nous avons réalisé de grands projets dans l'administration ivoiriennes (aux Douanes, au Trésor, au Ministère de la Fonction Publique, au BNETD), ainsi que chez de nombreux privés. Nous sommes partenaire Odoo depuis 2011
+
                   </p>
             </div>
             <div class="col-lg-4 mx-auto">

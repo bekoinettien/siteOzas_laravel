@@ -1,4 +1,4 @@
-@extends('Layout/header')
+@extends('Layout/Header')
 
 @section('content')
 

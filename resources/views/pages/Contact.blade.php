@@ -1,4 +1,4 @@
-@extends('Layout/header')
+@extends('Layout/Header')
 @section('content')
 <style>
     .secttion-1 {
@@ -47,7 +47,7 @@
                             Téléphone
                           </h5>
                           <p class="p-exp-contact">
-                            +225 27 22 502 238   
+                            +225 07 58 31 93 30   
                           </p> 
                         </div>
                 </div>

@@ -51,19 +51,19 @@
     <h1>A Propos</h1>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <p class="services-1-about"><span class="section-1-titre">Qui Sommes Nous!</span><br>Technologies Du Sud (TDS) a été fondé en 2013. 
-                  C’est un Cabinet de consultance exerçant dans les domaines du
-                   développement de logiciel, d’intégration de solution de Gestion 
-                   basé sur l’ERP Odoo et de formation continue. Ses fondateurs sont
-                    des experts en système d’information issus des grands cabinets de
-                     Consulting locaux et Européens.
-                  Nos domaines d’activité couvrent aussi l’Audit de système
-                   d’information, la planification stratégique et les schémas
-                    directeurs, la rédaction de cahier des charges, la maîtrise 
-                    d’ouvrage et la gestion de projet.
-                  </p>
-            </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="services-1-about"><span class="section-1-titre" style="color: #fff">Qui Sommes Nous!</span><br>
+              Nos experts sont généreux, ils donnent tout leur savoir-faire. Vous allez aimer travailler avec nous.
+
+              Avec notre « ancêtre » AfricaLand fondée en 1998, notre « mère » Technologies Du Sud fondé en 2013, c'est plus de 25 années d'expérience capitalisées que nous sommes heureux de mettre à votre disposition sous un tout nouveau label : Oozas
+              
+              Nous avons réalisé de grands projets dans l'administration ivoiriennes (aux Douanes, au Trésor, au Ministère de la Fonction Publique, au BNETD), ainsi que chez de nombreux privés. Nous sommes partenaire Odoo depuis 2011
+              
+              Oozas est une offre globale pour répondre à tous les besoins en matière de Système d’Information, d’équipement et, de renforcement de capacité technique et organisationnelle de ses clients. Nous pensons qu'avoir des partenaires multiples pour votre système d'information peut conduire à complexifier vos relations et en définitive à un manque de maîtrise de vos solutions. Nous vous proposons un partenariat durable basé sur la confiance et un bénéfice mutuel. Notre parfaite connaissance de l'entreprise et de ses enjeux d'une côte, et notre connaissance des dernières avancées technologiques nous permet de proposer la solution la plus adaptée à vos problèmes de gestion.
+              
+              Oozas est un réseau d’un réseau de compétences locales et internationales, capable de fournir un service de classe mondiale et est à votre disposition pour garantir le succès de vos projets.
+              
+        </div>
             <div class="col-lg-4 mx-auto">
               
           </div>
@@ -72,7 +72,7 @@
 </section>
 </body>
 
-<section>
+{{-- <section>
     <div class="tabs-container">
         <!-- Les onglets -->
         <div class="tabs">
@@ -102,7 +102,7 @@
         </div>
       </div>
       
-</section>
+</section> --}}
  
  {{-- DEBUT DES NOUVELLES --}}
   <section>
@@ -164,7 +164,7 @@
                   <h5 class="card-title">Yao Ruth</h5>
                   <p class="card-text">Commerciale</p>
               </div>
-              <img src="images/pres1.jpg" class="card-img-top" alt="...">
+              <img src="images/IMG_5823.jpeg" class="card-img-top" alt="...">
               <div class="ico">
                 <i class="fa-brands fa-facebook fa"></i>
                 <i class="fa-solid fa-envelope en"></i>
