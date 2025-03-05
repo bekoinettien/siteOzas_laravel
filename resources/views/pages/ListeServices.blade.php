@@ -42,9 +42,9 @@
             <div>
               <img src="/storage/service/{{ basename($services->image_path) }}" style="max-width: 50px; height: 50px; padding-top:10px">
 
-              <h4>{{ $services->titre }}</h4>
-              <p>{{ $services->description}}</p>
-              <p>{{ $services->created_at}}</p>
+              <h4><a href="{{ route('service.show', $services->id) }}">{{ $services->titre }}</a>
+              </h4>
+              <p>{!! $services->description !!}</p> 
             </div>
           </div>
           <div class="bout">

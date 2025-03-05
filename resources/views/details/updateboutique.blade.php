@@ -1,5 +1,4 @@
-@extends('Layout/headadmin') <!-- Hérite de la vue du dashboard -->
-
+@extends('admin.layouts.dashboard')
 @section('content')
 <section class="service-odoo1">
     <h1 class="text-center">Ajouter Les details de la Boutique</h1>

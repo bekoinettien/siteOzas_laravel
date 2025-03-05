@@ -7,6 +7,36 @@ use App\Http\Controllers\ControllerUser;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\IsAdmin;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
+Route::post('/upload-image', function (Request $request) {
+    if ($request->hasFile('file')) {
+        $path = $request->file('file')->store('uploads', 'public');
+        return response()->json(['location' => Storage::url($path)]);
+    }
+    return response()->json(['error' => 'Aucun fichier reçu'], 400);
+});
+
+//DASHBOARD
+Route::get('/admin',[ControllerFrontEnd::class,'dash']);
+Route::get('/listeactualite',[ControllerFrontEnd::class,'dashact']);
+Route::get('/listeservice',[ControllerFrontEnd::class,'dashlistact'])->name('dashlistact');
+Route::get('/listeblog',[ControllerFrontEnd::class,'dashlisteblog'])->name('dashlisteblog');
+Route::get('/listeprestation',[ControllerFrontEnd::class,'dashlisteprestation'])->name('dashlisteprestation');
+Route::get('/listereference',[ControllerFrontEnd::class,'dashlistereference'])->name('dashlistereference');
+Route::get('/listepartenaire',[ControllerFrontEnd::class,'dashlistepartenaire'])->name('dashlistepartenaire');
+// Afficher la page de description d'un service
+Route::get('/service/{id}', [ControllerFrontEnd::class, 'show'])->name('service.show');
+
+
+//Gestion des partenaire
+
+Route::post('/part',[ControllerFrontEnd::class,'addpartenaire']);
+Route::post('/partenaire/add', [ControllerFrontEnd::class, 'addeditpartenaire'])->name('partenaire.add');
+
+
+
 
 Route::get('/',[ControllerFrontEnd::class,'home'])->name('home');
 Route::post('/news',[ControllerFrontEnd::class,'addactualite']);
@@ -134,6 +164,11 @@ Route::middleware([IsAdmin::class])->group(function () {
     Route::get('/news',[ControllerFrontEnd::class,'actualite']);
     Route::get('/actualite/edit/{id}', [ControllerFrontEnd::class, 'editactualite']);
     Route::get('/actualite/delete/{id}', [ControllerFrontEnd::class, 'deleteactualite']);
+   
+    // partenaire admin
+    Route::get('/part',[ControllerFrontEnd::class,'partenaire']);
+    Route::get('/partenaire/edit/{id}', [ControllerFrontEnd::class, 'editpartenaire']);
+    Route::get('/partenaire/delete/{id}', [ControllerFrontEnd::class, 'deletepartenaire']);
    
   
     //////////////////

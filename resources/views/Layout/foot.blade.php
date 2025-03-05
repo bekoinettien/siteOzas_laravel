@@ -25,18 +25,13 @@
 <body>
   <!-- Carousel -->
   <div class="logo-carousel owl-carousel">
-      <div class="logo-item"><img src="images/part6.png" alt="Logo 1" ></div>
-      <div class="logo-item"><img src="images/part1.jpg" alt="Logo 2"></div>
-      <div class="logo-item"><img src="images/ref1.png" alt="Logo 3"></div>
-      <div class="logo-item"><img src="images/part20.jpg" alt="Logo 4"></div>
-      <div class="logo-item"><img src="images/part2.png" alt="Logo 1" ></div>
-      <div class="logo-item"><img src="images/ref2.jpeg" alt="Logo 1" ></div>
-      {{-- <div class="logo-item"><img src="images/part6.png" alt="Logo 2"></div>
-      <div class="logo-item"><img src="images/part7.png" alt="Logo 3"></div>
-      <div class="logo-item"><img src="images/part8.png" alt="Logo 4"></div>
-      <div class="logo-item"><img src="images/part9.png" alt="Logo 1" ></div>
-      <div class="logo-item"><img src="images/part10.png" alt="Logo 2"></div> --}}
-
+      <div class="logo-item"><img src="{{asset('images/part6.png')}}" alt="Logo 1" ></div>
+      <div class="logo-item"><img src="{{asset('images/part1.jpg')}}" alt="Logo 2"></div>
+      <div class="logo-item"><img src="{{asset('images/ref1.png')}}" alt="Logo 3"></div>
+      <div class="logo-item"><img src="{{asset('images/part20.jpg')}}" alt="Logo 4"></div>
+      <div class="logo-item"><img src="{{asset('images/part2.png')}}" alt="Logo 1" ></div>
+      <div class="logo-item"><img src="{{asset('images/ref2.jpeg')}}" alt="Logo 1" ></div>
+      
   </div>
 
   <!-- jQuery -->
@@ -69,7 +64,7 @@
     <div class="row">
         <div class="col-lg-5"> 
             <div class="imag-foot">
-                <img src="images/logo1.png" alt="" class="image-foot">
+                <img src="{{ asset('images/logo1.png') }}" alt="" class="image-foot">
             </div>
             <p class="services-foot">
               Nos experts sont généreux, ils donnent tout leur savoir-faire. Vous allez aimer travailler avec nous.

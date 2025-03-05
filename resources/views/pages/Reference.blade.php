@@ -1,4 +1,5 @@
-@extends('Layout/headadmin')
+@extends('admin.layouts.dashboard')
+
 @section('content')
     <section class="section-service1">
         <form method="POST" action="/reference" enctype="multipart/form-data">
@@ -30,7 +31,7 @@
                         <div class="text text-danger">{{$message}}</div> 
                         @enderror
                     </div>
-                 <p><button type="submit" class="btn btn-primary">Ajouter le blog</button></p>
+                 <p><button type="submit" class="btn btn-primary">Ajouter la reference</button></p>
              </div>
         </div>
      </div>

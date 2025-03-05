@@ -31,7 +31,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         
-        <a class="navbar-brand " href="/about"> <img src="images/logo1.png" alt="tdsci" class="logo" style="height: 45px; "> </a>
+        <a class="navbar-brand " href="/about"> <img src="{{ asset('images/logo1.png') }}" alt="Oozas" class="logo" style="height: 45px;">
+        </a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -56,6 +57,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link navig" href="/contact">Contactez-Nous</a>
+              <a class="nav-link navig" href="/admin">Admin</a>
             </li>
             @auth
                 

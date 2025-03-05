@@ -34,7 +34,7 @@
                         Adresse
                       </h5>
                       <p class="p-exp-contact">
-                        II Plateaux 8ième Tranche Rue L84, lot 707 îlot 45 
+                        II Plateaux Blv 8ième Tranche ,Rue L84, Pont Soro, Pharmacie Notre Dame du Grand signe 
                       </p>
                   </div>
                 </div>

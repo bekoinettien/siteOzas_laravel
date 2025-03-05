@@ -35,12 +35,13 @@ class ControllerServices extends Controller
                     $service->image_path = $imagePath;
                     
                 }
-                // Attribuer les valeurs et sauvegarder
+                // Attribuer les valeurs et sauvegarder contenue
                 $service->titre = $request->titre;
                 $service->description = $request->description;
+                $service->contenue = $request->contenue;
                 $service->save();
     
-                return view('/pages/Accueil');
+                return redirect()-> route('dashlistact');
             
     }
 
@@ -360,7 +361,8 @@ public function addeditboutique(RequestOdoo $request){
 {
     // Rechercher le service dans la base de données
     $service = Service::find($id);
-    return view('/pages/update', compact('service'));
+    $description = strip_tags($service->description);
+    return view('/pages/update', compact('service','description'));
 
 }
 public function addeditservicesodoo( Request $request){
@@ -368,6 +370,7 @@ public function addeditservicesodoo( Request $request){
     $request->validate([
         'titre' => 'required|string|max:255',
         'description' => 'required|string',
+        'contenue' => 'required|string',
         
         'image' => 'image',
         'image' => 'mimes:jpeg,png,jpg,gif',
@@ -383,6 +386,7 @@ public function addeditservicesodoo( Request $request){
         // Attribuer les valeurs et sauvegarder
         $service->titre = $request->titre;
         $service->description = $request->description;
+        $service->contenue = $request->contenue;
         $service->update();
        return redirect('/services');
 }

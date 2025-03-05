@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestService;
 use App\Models\Actualite;
 use App\Models\Blog;
+use App\Models\Partenaire;
+use App\Models\Service;
 use App\Models\Prestation;
 use App\Models\Reference;
 use Illuminate\Http\Request;
@@ -13,7 +15,8 @@ class ControllerFrontEnd extends Controller
 {
     public function home(){
         $actualite=Actualite::all();
-        return view('pages/Accueil' , compact('actualite'));
+        $partenaires=Partenaire::all();
+        return view('pages/Accueil' , compact('actualite','partenaires'));
     }
 
     ///ACTUALITES
@@ -35,7 +38,7 @@ class ControllerFrontEnd extends Controller
         return redirect()->route('home');
     
     }
-    //MODIFICATION DE BLOG
+    //MODIFICATION DE ACTUALITES
     public function editactualite( $id)
     {
         // Rechercher le service dans la base de données
@@ -67,7 +70,7 @@ class ControllerFrontEnd extends Controller
         return redirect('/');
     }
 
-// SUPRESSION DE BLOG
+// SUPRESSION DE ACTUALITES
     public function deleteactualite($id)
     {
         // Rechercher le service dans la base de données
@@ -87,6 +90,81 @@ class ControllerFrontEnd extends Controller
 
         return redirect()->back()->with('success', 'Service supprimé avec succès.');
     }   
+
+
+
+///PARTENAIRE
+public function partenaire(){
+    return view('/pages/partenaire');
+}
+public function addpartenaire(Request $request)
+{
+    $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('partenaires', 'public');
+        
+        $partenaire = new Partenaire;
+        $partenaire->image_path = $imagePath;
+        $partenaire->save();
+    }
+
+    return redirect()->route('home')->with('success', 'Partenaire ajouté avec succès!');
+}
+
+//MODIFICATION DE  partenaire 
+
+public function editpartenaire( $id)
+{
+    // Rechercher le service dans la base de données
+    $partenaire = Partenaire::find($id);
+    return view('/pages/updatePartenaire', compact('partenaire'));
+
+}
+public function addeditpartenaire( Request $request){
+
+    $request->validate([
+        
+        'image' => 'nullable',
+        'image' => 'image',
+        'image' => 'mimes:jpeg,png,jpg,gif',
+    ]);
+
+    $partenaire = Partenaire::find($request->id);
+
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('partenaire', 'public');
+        $partenaire->image_path = $imagePath;
+        
+    }
+        // Attribuer les valeurs et sauvegarder
+        $partenaire->update();
+    return redirect('/');
+}
+
+// SUPRESSION DE partenaire
+public function deletepartenaire($id)
+{
+    // Rechercher le service dans la base de données
+    $partenaire = Partenaire::find($id);
+
+    if (!$partenaire) {
+        return redirect()->back()->with('error', 'Service introuvable.');
+    }
+
+    // Supprimer l'image associée au service
+    if ($partenaire->path_image && file_exists(storage_path('app/public/' . $partenaire->path_image))) {
+        unlink(storage_path('app/public/' . $partenaire->path_image));
+    }
+
+    // Supprimer le service de la base de données
+    $partenaire->delete();
+
+    return redirect()->back()->with('success', 'Service supprimé avec succès.');
+}   
+
 
 
 
@@ -111,7 +189,7 @@ class ControllerFrontEnd extends Controller
                 $blog->description = $request->description;
                 $blog->save();
     
-                return view('/pages/Accueil');
+                return redirect()-> route('dashlisteblog');
             
     }
 
@@ -191,7 +269,7 @@ public function addreference(Reference $reference , RequestService $request){
             $reference->description = $request->description;
             $reference->save();
 
-            return view('/pages/Accueil');
+            return redirect()->route('dashlistereference');
         
 }
 
@@ -270,7 +348,7 @@ public function addprestation(Prestation $prestation , RequestService $request){
             $prestation->description = $request->description;
             $prestation->save();
 
-            return view('/pages/Accueil');
+            return redirect()->route('dashlisteprestation');
         
 }
 
@@ -326,7 +404,44 @@ $prestation->delete();
 
 return redirect()->back()->with('success', 'Service supprimé avec succès.');
 }
+////DASHBOARD
+public function dash(){
+    return view('admin.layouts.dashboard');
+}
+public function dashact(){
+    $actualite=Actualite::all();
+    return view('admin.pages.listeActualiteAdmin', compact('actualite'));
+}
+public function dashlistact(){
+    $service = Service::all();
+    return view('admin.pages.listeServiceAdmin', compact('service'));
+}
+public function dashlisteblog(){
+    $blog = Blog::all();
+    return view('admin.pages.listeBlogAdmin', compact('blog'));
+}
+public function dashlisteprestation(){
+    $prestation=Prestation::all();
+    return view('admin.pages.listePrestationAdmin', compact('prestation'));
+}
+public function dashlistereference(){
+    $reference=Reference::all();
+    return view('admin.pages.listeReferenceAdmin', compact('reference'));
+}
+public function dashlistepartenaire(){
+    $partenaire=Partenaire::all();
+    return view('admin.pages.listePartenaireAdmin', compact('partenaire'));
+}
 
+public function show($id)
+{
+    // Récupérer le service par son ID
+    $service = Service::findOrFail($id);
+   // $services = Service::all();
+
+    // Retourner la vue avec les données du service
+    return view('admin.pages.listeService', compact('service'));
+}
 
 
 }

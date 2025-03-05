@@ -7,9 +7,9 @@
       <img src="images/AT2.jpg" class="d-block w-100 tres " alt="...">
       <div class="titre-img1 container">
         <h3 class="text11">
-          Odoo la solution ERP idéale pour tous vos problèmes de gestion
-           d'entreprise, Complète, Simple et abordable. 
-           <span>Oozas nous sommes à vos côtés pour vous aider à bien
+          Odoo, la solution ERP idéale pour tous vos problèmes de gestion
+           d'entreprise, Complète, Simple et abordable. </br>
+           <span style="font-size: 30px;">Oozas nous sommes à vos côtés pour vous aider à bien
          réussir votre implémentation</span>
         </h3>
       </br>
@@ -26,8 +26,8 @@
       <div class="titre-img1 container">
         <h3 class="text11">
           Sociétés de transport, faites du voyage dans vos véhicules, 
-          un expérience inoubliable...
-          avec notre système de  réservation et de gestion des passagers
+          un expérience inoubliable... </br>
+          <span style="font-size: 30px;">avec notre système de  réservation et de gestion des passagers</span>
         </h3>
       </br>
       <p class="">Nous vous proposons des formations sur mesures</p>
@@ -39,10 +39,10 @@
       <img src="images/ERP.webp" class="d-block w-100  tres  " alt="...">
       <div class="titre-img1 container">
         <h1 class="text11">
-          Odoo pour la Fabrication
+          Odoo pour la Fabrication:
           Tout ce dont vous avez besoin en une seule plateforme, rapide et
-           facile à utiliser.
-            MRP + MES + PLM + Qualité + Atelier + Maintenance
+           facile à utiliser. </br>
+           <span style="font-size: 30px;"> MRP + MES + PLM + Qualité + Atelier + Maintenance</span>
         </h1>
       </br>
       <p class="">Nous vous proposons des formations sur mesures</p>
@@ -60,44 +60,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<section class="docs">
- {{-- <a href="document/CV_BEKOIN.pdf" download="devis.pdf"> <i class="fa-solid fa-cloud-arrow-down">azert</i></a> --}}
-  {{-- <a href="document/CV_BEKOIN.pdf" class="btn btn-primary" download="devis.pdf">
-    Télécharger le devis
-</a>   --}}
-</section>
-{{-- DEBUT PRESENTATION --}}
-<section class="animation-section">
-  <!-- Column 1: Image -->
-  <div class="col-lg-6 image-container">
-      <img src="images/act1.jpg" alt="Image animée" class="img-annim1">
-      <img src="images/act3.jpg" alt="Image animée" class="img-annim2">
-      {{-- <img src="images/act2.png" alt="Image animée" class="img-annim3">
-      <img src="images/act4.jpg" alt="Image animée" class="img-annim4"> --}}
-  </div>
 
-  <!-- Column 2: Text -->
-  <div class="col-lg-6 text-container">
-      <p>
-        Domaines d'expertise :
-        Nous intervenons dans divers secteurs des NTIC, notamment :
-        Développement d'applications : Conception de logiciels sur mesure, développement d'applications web et mobiles.
-        Solutions Cloud et hébergement : Migration vers le cloud, 
-        hébergement sécurisé et gestion de données. <br>
-        Sécurité informatique : Protection des systèmes d'information, audit de sécurité, mise en place de solutions de cybersécurité.
-        Réseaux et télécommunications : Installation, maintenance et optimisation des réseaux d'entreprise.
-        Intelligence artificielle et analyse de données : Développement d'algorithmes pour la prise de décision et la valorisation des données.
-        Formation et accompagnement : Sensibilisation aux outils numériques, formations en bureautique, gestion des réseaux, et solutions ERP.<br>
-        Nos valeurs :
-        Chez Oozs Technologies, nous nous engageons à :<br>
-        Innover : Nous utilisons les technologies les plus récentes pour proposer des solutions modernes et performantes.
-        Collaborer : Nous plaçons nos clients au centre de nos priorités en travaillant main dans la main pour atteindre leurs objectifs.
-        Protéger : Nous mettons un point d'honneur à sécuriser vos données et garantir leur confidentialité.
-      </p>
-  </div>
- 
-</section>
-{{-- FIN PRESENTATION --}}
 
 {{-- debut evenement --}}
 <section>
@@ -133,6 +96,68 @@
 </section>
 {{-- fin evenement --}}
 
+
+{{-- debut partenaire --}}
+
+{{-- Debut logo --}}
+<section>
+  <div class="titre">
+    <h2> Nos <span>Partenaires</span></h2>
+  </div>
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <style>
+      .logo-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          margin-top: 15px
+      }
+
+      .logo-item img {
+          max-width: 300px;
+          max-height: 100px;
+          object-fit: contain;
+      }
+  </style>
+</head>
+<body>
+  <!-- Carousel -->
+  <div class="logo-carousel owl-carousel">
+      @foreach($partenaires as $partenaire)
+      <div class="logo-item"><img src="{{ asset('storage/' . $partenaire->image_path) }}" alt="Logo {{ $partenaire->nom }}"></div>
+      @endforeach
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $(".logo-carousel").owlCarousel({
+              loop: true,
+              margin: 10,
+              autoplay: true,
+              autoplayTimeout: 2000,
+              autoplayHoverPause: true,
+              responsive: {
+                  0: { items: 2 },
+                  600: { items: 3 },
+                  1000: { items: 5 }
+              }
+          });
+      });
+  </script>
+</body>
+
+</section>
+{{-- Fin logo --}}
+
+
+{{-- fin partenaire --}}
   {{-- section de la presentation des activites --}}
   <section>
     <div class="titre">

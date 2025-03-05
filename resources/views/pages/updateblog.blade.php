@@ -1,4 +1,5 @@
-@extends('Layout/headadmin')
+@extends('admin.layouts.dashboard')
+
 @section('content')
     <section class="section-service1">
         <form method="POST" action="{{ route('blog.add') }}" enctype="multipart/form-data">
