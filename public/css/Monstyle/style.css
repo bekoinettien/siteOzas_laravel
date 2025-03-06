@@ -213,9 +213,9 @@ span{
 }
 
 .img-image{
-   height: 80px;
-    margin-top: 30px;
-    max-width: 200;
+   height: 100px;
+    margin-top: 10px;
+    max-width: 100%;
 }
 .detail-box{
     margin-top: 20px;

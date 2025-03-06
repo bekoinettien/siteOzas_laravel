@@ -1,5 +1,5 @@
 {{-- Debut logo  --}}
-<section>
+{{-- <section>
   <div class="titre">
     <h2> Nos <span>Partenaires</span></h2>
   </div>
@@ -57,7 +57,7 @@
 </body>
 
 
-</section>
+</section> --}}
 {{-- Fin  logo --}}
 
 <div class="container-fluid footer">

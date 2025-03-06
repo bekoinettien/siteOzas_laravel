@@ -30,7 +30,7 @@
 </style>
 <section class="secttion-1">
     <div class="btn-container">
-    <a href="/part" class="btn btn-success mod" style="margin: 5px;">Ajouter un nouveau Partenaire</a></br>
+    <a href="/equip" class="btn btn-success mod" style="margin: 5px;">Ajouter une nouvelle Personne</a></br>
     <a href="" class="btn btn-danger sup" style="margin: 5px;">SUPPRIMER</a>
     </div>
 </section>
@@ -38,11 +38,13 @@
 <section>
     <div class="container">
       <div class="titre">
-        <h2> NOS  <span>PARTENAIRE</span></h2>
+        <h2> NOTRE  <span>EQUIPE</span></h2>
       </div>
       <table>
         <thead>
           <tr>
+            <th>nom</th>
+            <th>fonction</th>
             <th>Image</th>
             <th>Date de création</th>
             @if(auth()->check() && auth()->user()->is_admin == 3)
@@ -52,17 +54,20 @@
         </thead>
         <tbody>
       
-        @foreach($partenaire as $index => $partenaires)
+        @foreach($equipe as $index => $equipes)
         
             <tr>
-                <td> <img src="/storage/partenaires/{{ basename($partenaires->image_path) }}" style="max-width: 100px; height: 100px; padding-top:10px"> </td>
-              <td>{{ $partenaires->created_at}}</td>
+                <td>{{ $equipes->nom }}</td>
+                <td>{{ $equipes->fonction}}</td>
+                <td> <img src="/storage/equipe/{{ basename($equipes->path_image) }}" style="max-width: 100px; height: 100px; padding-top:10px"> </td>
+              
+              <td>{{ $equipes->created_at}}</td>
             
           
             @if(auth()->check() && auth()->user()->is_admin == 3)
             <td>
-                <a href="/partenaire/edit/{{$partenaires->id}}" class=" btn btn-success mod" style="margin: 5px;">MODIFIER</a>
-                <a href="/partenaire/delete/{{$partenaires->id}}" class=" btn btn-danger sup">SUPPRIMER</a>
+                <a href="/equipe/edit/{{$equipes->id}}" class=" btn btn-success mod" style="margin: 5px;">MODIFIER</a>
+                <a href="/equipe/delete/{{$equipes->id}}" class=" btn btn-danger sup">SUPPRIMER</a>
             </td>
            @endif
         </tr>

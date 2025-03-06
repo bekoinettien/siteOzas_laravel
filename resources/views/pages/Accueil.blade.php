@@ -15,7 +15,7 @@
       </br>
      
          <div>
-          <a href="/services-odoo" class="btn btn-primary">Savoir Plus</a>
+          <a href="#services" class="btn btn-primary">Savoir Plus</a>
           <a href="/contact" class="btn btn-success">Contactez-Nous</a>  
          </div>
             
@@ -31,7 +31,7 @@
         </h3>
       </br>
       <p class="">Nous vous proposons des formations sur mesures</p>
-        <a href="/services" class="btn btn-primary">Savoir Plus</a>
+        <a href="/expertise" class="btn btn-primary">Savoir Plus</a>
       <a href="/contact" class="btn btn-success">Contactez-Nous</a>        
       </div>
     </div>
@@ -46,7 +46,7 @@
         </h1>
       </br>
       <p class="">Nous vous proposons des formations sur mesures</p>
-      <a href="/services" class="btn btn-primary">Savoir Plus</a>
+      <a href="/expertise" class="btn btn-primary">Savoir Plus</a>
       <a href="/contact" class="btn btn-success">Contactez-Nous</a>        
       </div>
     </div>
@@ -96,6 +96,113 @@
 </section>
 {{-- fin evenement --}}
 
+
+
+  {{-- section de la presentation des activites --}}
+
+ {{-- fin presentation des acctivités --}}
+  <style>
+    .secttion-4 {
+        background-image: url('images/accueil1.jpg'); /* Remplace par ton image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 30px 0;
+        color: #fff;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .secttion-4 h1 {
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+    }
+    .secttion-4 p {
+        font-size: 1.2rem;
+    }
+</style>
+
+</head>
+<body>
+
+
+  {{-- text service --}}
+  <section class="service_section layout_padding" id="services">
+    <div class="container ">
+      <div class="titre">
+        <h2> Nos domaines  <span>Expertises</span></h2>
+      </div>
+      <div class="row">
+    
+        @foreach($service as $index => $services)
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <div class="box-service ">
+            <div>
+              <img src="/storage/service/{{ basename($services->image_path) }}" class="img-image" style="margin-bottom: 15px;">
+
+              <h4><a href="{{ route('service.show', $services->id) }}" style="background-color: rgb(243, 205, 14); text-decoration: none; color:#fff">{{ $services->titre }}</a>
+              </h4>
+              <p>{!! $services->description !!}</p> 
+            </div>
+          </div>
+          <div class="bout">
+            @if(auth()->check() && auth()->user()->is_admin == 3)
+           <a href="/service-odoo/edit/{{$services->id}}" class=" btn btn-success mod">MODIFIER</a>
+           <a href="/service-odoo/delete/{{$services->id}}" class=" btn btn-danger sup">SUPPRIMER</a>
+           @endif
+          </div>     
+        </div>
+        @endforeach
+    
+      </div>
+    </div>
+  </section>
+  {{-- fin service --}}
+<section class="secttion-4">
+    <h1>A Propos</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <p class="services-1"><span class="section-1-titre">Qui Sommes Nous!</span><br>
+                  Nos experts sont généreux, ils donnent tout leur savoir-faire. Vous allez aimer travailler avec nous.
+
+Avec notre « ancêtre » AfricaLand fondée en 1998, notre « mère » Technologies Du Sud fondé en 2013, c'est plus de 25 années d'expérience capitalisées que nous sommes heureux de mettre à votre disposition sous un tout nouveau label : Oozas
+
+Nous avons réalisé de grands projets dans l'administration ivoiriennes (aux Douanes, au Trésor, au Ministère de la Fonction Publique, au BNETD), ainsi que chez de nombreux privés. Nous sommes partenaire Odoo depuis 2011
+
+                  </p>
+            </div>
+            <div class="col-lg-4 mx-auto">
+              
+          </div>
+        </div>
+    </div>
+</section>
+</body>
+<section>
+  <div class="titre">
+  <h2> NOTRE <span>EQUIPE</span></h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      @foreach($equipe as $index => $equipes)
+     
+     
+      <div class="col-6 col-lg-3 col-sm-6">
+          <div class="card" >
+              <div class="card-body">
+                  <h5 class="card-title">{{ $equipes->nom }}</h5>
+                  <p class="card-text">{{ $equipes->fonction}}</p>
+                </div>
+                <img src="/storage/equipe/{{ basename($equipes->path_image) }}" style="max-width: 280px; height: 150px; padding-top:10px"  class="card-img-top" alt="...">
+
+          </div>
+      </div>
+      
+      @endforeach
+    </div>
+</div>
+
+</section>
 
 {{-- debut partenaire --}}
 
@@ -158,253 +265,15 @@
 
 
 {{-- fin partenaire --}}
-  {{-- section de la presentation des activites --}}
-  <section>
-    <div class="titre">
-      <h2> Nos domaines  <span>Expertises</span></h2>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-       
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service2.png" alt="" class="img-image" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Offre ERP Odoo
-              </h5>
-              <p  class="p-exp">
-                Avec 14 année d'expérience dans la mise en 
-                œuvre de l'ERP Odoo dans des entreprises de 
-                diverses tailles, ...
-              </p>
-              <a href="/services-odoo" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service4.jpeg" alt="" class="img-image" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Offre de services
-                BIG DATA
-                            
-              
-              </h5>
-              <p class="p-exp">
-                La donnée occupe une place centrale dans un 
-                contexte de digitalisation au sein de l'entreprise 
-                de nos jours... 
-                       
-                  </p>
-                  <a href="/services-bigdata" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service6.jpeg" alt="" class="img-image"/>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Développement Web
-               
-              </h5>
-              <p  class="p-exp">
-                . Développement de site internet<br>
-                . Développement d'application Web<br>
-                . Analyse et conseils pour digitalisation...
-               
-              </p>
-              <a href="/services-devweb" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service7.jpeg" alt="" class="img-image"/>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Cybersécurité
-              </h5>
-              <p class="p-exp">
-                La cybersécurité demeure un domaine 
-                incontournable. Avec l’augmentation des 
-                cyberattaques,... 
-                
-              </p>
-              <a href="/services-cyber" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service8.jpeg" alt="" class="img-image"/>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Formation continue
-              
-              </h5>
-              <p class="p-exp">
-                Technologies du Sud vous accompagne dans le 
-                développement des vos compétences internes, 
-                en vous offrant...
-                
-              </p>
-              <a href="/services-formation" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4 col-sm-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/service9.jpeg" alt="" class="img-image" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Boutique et services
-              </h5>
-              <p class="p-exp">
-                Câblage Réseaux et pose de Fibre optique.
-                Vente de matériel et tout accessoire 
-               électronique...</p>
-               
-               <a href="/services-boutique" class="btn btn-primary">Plus d'Infos</a>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <div class="bout">
-        <a href="/services" class=" btn btn-success mod">VOIR PLUS</a>
-       </div> 
-  </section>
- {{-- fin presentation des acctivités --}}
-  <style>
-    .secttion-4 {
-        background-image: url('images/accueil1.jpg'); /* Remplace par ton image */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        padding: 30px 0;
-        color: #fff;
-        text-align: center;
-        margin-top: 100px;
-    }
-    .secttion-4 h1 {
-        margin-bottom: 20px;
-        font-size: 2.5rem;
-    }
-    .secttion-4 p {
-        font-size: 1.2rem;
-    }
-</style>
-</head>
-<body>
-<section class="secttion-4">
-    <h1>A Propos</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <p class="services-1"><span class="section-1-titre">Qui Sommes Nous!</span><br>
-                  Nos experts sont généreux, ils donnent tout leur savoir-faire. Vous allez aimer travailler avec nous.
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
 
-Avec notre « ancêtre » AfricaLand fondée en 1998, notre « mère » Technologies Du Sud fondé en 2013, c'est plus de 25 années d'expérience capitalisées que nous sommes heureux de mettre à votre disposition sous un tout nouveau label : Oozas
-
-Nous avons réalisé de grands projets dans l'administration ivoiriennes (aux Douanes, au Trésor, au Ministère de la Fonction Publique, au BNETD), ainsi que chez de nombreux privés. Nous sommes partenaire Odoo depuis 2011
-
-                  </p>
-            </div>
-            <div class="col-lg-4 mx-auto">
-              
-          </div>
-        </div>
-    </div>
-</section>
-</body>
-<section>
-  <div class="titre">
-  <h2> NOTRE <span>EQUIPE</span></h2>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-6 col-lg-3 col-sm-6">
-    
-          <div class="card" >
-              <div class="card-body">
-                  <h5 class="card-title">Konan Christophe</h5>
-                  <p class="card-text">PDG</p>
-                </div>
-            <img src="images/equipe1.png" class="card-img-top" alt="...">
-            <div class="ico">
-              <i class="fa-brands fa-facebook fa"></i>
-              <i class="fa-solid fa-envelope en"></i>
-              <i class="fa-brands fa-linkedin lin"></i>
-              <i class="fa-brands fa-twitter twi"></i>
-            </div>
-          </div>
-      </div>
-      <div class="col-6 col-lg-3 col-sm-6">
-        <div class="card" >
-          <div class="card-body">
-              <h5 class="card-title">Bekoin Etienne</h5>
-              <p class="card-text">Informaticien Developpeur</p>
-            </div>
-          <img src="images/equipe3.jpg" class="card-img-top" alt="...">
-          <div class="ico">
-              <i class="fa-brands fa-facebook fa"></i>
-              <i class="fa-solid fa-envelope en"></i>
-              <i class="fa-brands fa-linkedin lin"></i>
-              <i class="fa-brands fa-twitter twi"></i>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-lg-3 col-sm-6">
-        <div class="card">
-          <div class="card-body">
-              <h5 class="card-title">Ines Gregorienne</h5>
-              <p class="card-text">Infographe</p>
-          </div>
-          <img src="images/equipe2.jpg" class="card-img-top" alt="...">
-          <div class="ico">
-              <i class="fa-brands fa-facebook fa"></i>
-              <i class="fa-solid fa-envelope en"></i>
-              <i class="fa-brands fa-linkedin lin"></i>
-              <i class="fa-brands fa-twitter twi"></i>
-            </div>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3 col-sm-6">
-          <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Yao Ruth</h5>
-                <p class="card-text">Commerciale</p>
-            </div>
-            <img src="images/pres1.jpg" class="card-img-top" alt="...">
-            <div class="ico">
-              <i class="fa-brands fa-facebook fa"></i>
-              <i class="fa-solid fa-envelope en"></i>
-              <i class="fa-brands fa-linkedin lin"></i>
-              <i class="fa-brands fa-twitter twi"></i>
-            </div>
-          </div>
-        </div>
-</div>
-</div>
-
-</section>
-
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
 @endsection

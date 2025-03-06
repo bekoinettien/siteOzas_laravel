@@ -51,7 +51,7 @@ class ControllerUser extends Controller
 
             if(Auth::user()->is_admin == 3)
             {
-                return redirect('/tableau');
+                return redirect('/admin');
             }else{
                 return redirect()->intended('/');
             }

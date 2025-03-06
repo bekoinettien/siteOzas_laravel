@@ -43,7 +43,7 @@
               <a class="nav-link navig" href="/about">A Propos</a>
             </li> --}}
             <li class="nav-item">
-              <a class="nav-link navig" href="/services">Nos Expertises</a>
+              <a class="nav-link navig" href="/expertise">Nos Expertises</a>
             </li>
             
             <li class="nav-item">
@@ -57,13 +57,13 @@
             </li>
             <li class="nav-item">
               <a class="nav-link navig" href="/contact">Contactez-Nous</a>
-              <a class="nav-link navig" href="/admin">Admin</a>
             </li>
+            
             @auth
                 
             @if(auth()->check() && auth()->user()->is_admin == 3)
             <li class="nav-item">
-              <a class="nav-link navig" href="/tableau">Dashboard</a>
+              <a class="nav-link navig" href="/admin">Admin</a>
             </li>
             @endif
             @endauth

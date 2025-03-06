@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestContact;
 use App\Models\Contact;
+use App\Models\Equipe;
+use App\Models\Partenaire;
 use Illuminate\Http\Request;
 
 class ControllerContact extends Controller
@@ -25,6 +27,9 @@ class ControllerContact extends Controller
     // section about
 
     public function abouts(){
-        return view('/pages/About');
+        $partenaires=Partenaire::all();
+        //$equipe=Partenaire::all();
+        $equipe=Equipe::all();
+        return view('/pages/About',compact('partenaires','equipe'));
     }
 }

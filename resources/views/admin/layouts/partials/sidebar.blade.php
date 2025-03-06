@@ -84,6 +84,48 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo5"
+        aria-expanded="true" aria-controls="collapseTwo5">
+        <i class="fa-solid fa-users-gear"></i>
+        <span>Partenaires</span>
+    </a>
+        <div id="collapseTwo5" class="collapse" aria-labelledby="headingTwo5" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="/listepartenaire">Liste des Partenaires</a>   
+                <a class="collapse-item" href="/part">Ajouter un partenaire</a>   
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo6"
+        aria-expanded="true" aria-controls="collapseTwo6">
+        <i class="fa-solid fa-people-roof"></i>
+        <span>Teams</span>
+    </a>
+        <div id="collapseTwo6" class="collapse" aria-labelledby="headingTwo6" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="/listeequipe">Liste de la Team</a>   
+                <a class="collapse-item" href="/equip">Ajouter une Personne</a>   
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo7"
+        aria-expanded="true" aria-controls="collapseTwo7">
+        <i class="fa-solid fa-people-carry-box"></i>
+        <span>Expertises</span>
+    </a>
+        <div id="collapseTwo7" class="collapse" aria-labelledby="headingTwo7" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="/listeexpertise">Liste des Expertises</a>   
+                <a class="collapse-item" href="/expert">Ajouter une Expertise</a>   
+            </div>
+        </div>
+    </li>
+
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -119,7 +161,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
+                <a class="collapse-item" href="/deconnexion">Login</a>
                 <a class="collapse-item" href="register.html">Register</a>
                 <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                 <div class="collapse-divider"></div>

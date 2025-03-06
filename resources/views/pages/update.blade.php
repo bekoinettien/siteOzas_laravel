@@ -3,7 +3,7 @@
 <script src="https://cdn.tiny.cloud/1/tg6k0dv098m2uo06ty67wwgx6ypu75go4rd4qcemrjyif8dx/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
-        selector: 'textarea#description', // Cible le champ description
+        selector: 'textarea#contenue', // Cible le champ description
         plugins: 'advlist autolink lists link image charmap print preview anchor code',
         toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image',
         menubar: false,
@@ -75,8 +75,16 @@
                     </div>   
                     <div class="form-group mb-4">
                         <label>Redigez la Description</label>
-                        <textarea id="description" style="height:100px;" name="description" class="form-control" name="description" placeholder="Decription du service">{{$service->description}}</textarea>
+                        <textarea style="height:100px;" name="description" class="form-control" name="description" placeholder="Decription du service">{{$service->description}}</textarea>
                         @error('description')
+                        <div class="text text-danger">{{$message}}</div> 
+                        @enderror
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label>Redigez le Contenue</label>
+                        <textarea id="contenue" style="height:100px;" name="contenue" class="form-control" name="contenue" placeholder="Decription du service">{{$service->contenue}}</textarea>
+                        @error('contenue')
                         <div class="text text-danger">{{$message}}</div> 
                         @enderror
                     </div>

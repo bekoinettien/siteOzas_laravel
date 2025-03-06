@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestService;
 use App\Models\Actualite;
 use App\Models\Blog;
+use App\Models\Equipe;
+use App\Models\Expertise;
 use App\Models\Partenaire;
 use App\Models\Service;
 use App\Models\Prestation;
@@ -16,7 +18,10 @@ class ControllerFrontEnd extends Controller
     public function home(){
         $actualite=Actualite::all();
         $partenaires=Partenaire::all();
-        return view('pages/Accueil' , compact('actualite','partenaires'));
+        //$equipe=Partenaire::all();
+        $equipe=Equipe::all();
+        $service=Service::all();
+        return view('pages/Accueil' , compact('actualite','partenaires','equipe','service'));
     }
 
     ///ACTUALITES
@@ -111,7 +116,7 @@ public function addpartenaire(Request $request)
         $partenaire->save();
     }
 
-    return redirect()->route('home')->with('success', 'Partenaire ajouté avec succès!');
+    return redirect()->route('dashlistepartenaire')->with('success', 'Partenaire ajouté avec succès!');
 }
 
 //MODIFICATION DE  partenaire 
@@ -135,13 +140,13 @@ public function addeditpartenaire( Request $request){
     $partenaire = Partenaire::find($request->id);
 
     if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('partenaire', 'public');
+        $imagePath = $request->file('image')->store('partenaires', 'public');
         $partenaire->image_path = $imagePath;
         
     }
         // Attribuer les valeurs et sauvegarder
         $partenaire->update();
-    return redirect('/');
+    return redirect()->route('dashlistepartenaire');
 }
 
 // SUPRESSION DE partenaire
@@ -164,6 +169,87 @@ public function deletepartenaire($id)
 
     return redirect()->back()->with('success', 'Service supprimé avec succès.');
 }   
+
+
+///EQUIPES
+public function equipe(){
+    return view('/pages/Equipe');
+}
+public function addequipe( Request $request){
+   
+    $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'nom' => 'required|string',
+        'fonction' => 'required|string',
+
+    ]);
+
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('equipe', 'public');
+        
+        $equipe = new Equipe;
+        $equipe->nom  = $request->input('nom');;
+        $equipe -> fonction = $request->input('fonction');;
+        $equipe->path_image = $imagePath;
+        $equipe->save();
+    }
+
+    return redirect()->route('home');
+
+}
+//MODIFICATION DE ACTUALITES
+public function editequipe( $id)
+{
+    // Rechercher le service dans la base de données
+    $equipe = Equipe::find($id);
+    return view('/pages/updateEquipe', compact('equipe'));
+
+}
+public function addeditequipe( Request $request){
+
+    $request->validate([
+        'nom' => 'required|string|max:255',
+        'fonction' => 'required|string',
+        'image' => 'nullable',
+        'image' => 'image',
+        'image' => 'mimes:jpeg,png,jpg,gif',
+    ]);
+
+    $equipe = Equipe::find($request->id);
+
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('equipe', 'public');
+        $equipe->path_image = $imagePath;
+        
+    }
+        // Attribuer les valeurs et sauvegarder
+        $equipe->nom = $request->nom;
+        $equipe->fonction = $request->fonction;
+        $equipe->update();
+    return redirect('/');
+}
+
+// SUPRESSION DE ACTUALITES
+public function deleteequipe($id)
+{
+    // Rechercher le service dans la base de données
+    $equipe = Equipe::find($id);
+
+    if (!$equipe) {
+        return redirect()->back()->with('error', 'Service introuvable.');
+    }
+
+    // Supprimer l'image associée au service
+    if ($equipe->path_image && file_exists(storage_path('app/public/' . $equipe->path_image))) {
+        unlink(storage_path('app/public/' . $equipe->path_image));
+    }
+
+    // Supprimer le service de la base de données
+    $equipe->delete();
+
+    return redirect()->back()->with('success', 'Service supprimé avec succès.');
+}   
+
 
 
 
@@ -433,6 +519,19 @@ public function dashlistepartenaire(){
     return view('admin.pages.listePartenaireAdmin', compact('partenaire'));
 }
 
+public function dashlisteequipe(){
+    $equipe=Equipe::all();
+    return view('admin.pages.listeEquipeAdmin', compact('equipe'));
+}
+
+public function dashlisteexpertise(){
+    $expertise=Expertise::all();
+    return view('admin.pages.listeExpertiseAdmin', compact('expertise'));
+}
+
+
+
+
 public function show($id)
 {
     // Récupérer le service par son ID
@@ -442,6 +541,79 @@ public function show($id)
     // Retourner la vue avec les données du service
     return view('admin.pages.listeService', compact('service'));
 }
+
+
+
+// experises
+
+public function expertise(){
+    return view('/pages/expertise');
+}
+
+public function listeexpertise(){
+    $expertise = Expertise::all();
+    return view('/pages/ListeServices',compact('expertise'));
+}
+public function addexpertise( Request $request){
+   
+    $request->validate([
+       
+        'description' => 'required|string',
+
+    ]);
+
+        $expertise = new Expertise;
+        $expertise -> description = $request->input('description');;
+        
+        $expertise->save();
+
+    return redirect()->route('home');
+
+}
+//MODIFICATION DE EXPERTISE
+public function editexpertise( $id)
+{
+    // Rechercher le service dans la base de données
+    $expertise = Expertise::find($id);
+    return view('/pages/updateExpertise', compact('expertise'));
+
+}
+public function addeditexpertise( Request $request){
+
+    $request->validate([
+        
+        'description' => 'required|string',
+        
+    ]);
+
+    $expertise = Expertise::find($request->id);
+
+        // Attribuer les valeurs et sauvegarder
+       
+        $expertise->description = $request->description;
+        $expertise->update();
+    return redirect('/');
+}
+
+// SUPRESSION DE ACTUALITES
+public function deleteexpertise($id)
+{
+    // Rechercher le service dans la base de données
+    $expertise = Expertise::find($id);
+
+    if (!$expertise) {
+        return redirect()->back()->with('error', 'Service introuvable.');
+    }
+
+    // Supprimer le service de la base de données
+    $expertise->delete();
+
+    return redirect()->back()->with('success', 'Service supprimé avec succès.');
+}   
+
+
+
+
 
 
 }

@@ -70,6 +70,7 @@
         </div>
     </div>
 </section>
+
 </body>
 
 {{-- <section>
@@ -105,78 +106,91 @@
 </section> --}}
  
  {{-- DEBUT DES NOUVELLES --}}
+ 
+</div>
+  </section>
+
+  {{-- FIN DES NOUVELLE --}}
   <section>
     <div class="titre">
     <h2> NOTRE <span>EQUIPE</span></h2>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-12 col-lg-3 col-sm-4">
-      
+        @foreach($equipe as $index => $equipes)
+       
+       
+        <div class="col-6 col-lg-3 col-sm-6">
             <div class="card" >
                 <div class="card-body">
-                    <h5 class="card-title">Konan Christophe</h5>
-                    <p class="card-text">PDG</p>
+                    <h5 class="card-title">{{ $equipes->nom }}</h5>
+                    <p class="card-text">{{ $equipes->fonction}}</p>
                   </div>
-              <img src="images/equipe1.png" class="card-img-top" alt="...">
-              <div class="ico">
-                <i class="fa-brands fa-facebook fa"></i>
-                <i class="fa-solid fa-envelope en"></i>
-                <i class="fa-brands fa-linkedin lin"></i>
-                <i class="fa-brands fa-twitter twi"></i>
-              </div>
+                  <img src="/storage/equipe/{{ basename($equipes->path_image) }}" style="max-width: 280px; height: 150px; padding-top:10px"  class="card-img-top" alt="...">
+  
             </div>
         </div>
-        <div class="col-12 col-lg-3 col-sm-4">
-          <div class="card" >
-            <div class="card-body">
-                <h5 class="card-title">Bekoin Etienne</h5>
-                <p class="card-text">Informaticien Developpeur</p>
-              </div>
-            <img src="images/equipe3.jpg" class="card-img-top" alt="...">
-            <div class="ico">
-                <i class="fa-brands fa-facebook fa"></i>
-                <i class="fa-solid fa-envelope en"></i>
-                <i class="fa-brands fa-linkedin lin"></i>
-                <i class="fa-brands fa-twitter twi"></i>
-              </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-3 col-sm-4">
-          <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Ines Gregorienne</h5>
-                <p class="card-text">Infographe</p>
-            </div>
-            <img src="images/equipe2.jpg" class="card-img-top" alt="...">
-            <div class="ico">
-                <i class="fa-brands fa-facebook fa"></i>
-                <i class="fa-solid fa-envelope en"></i>
-                <i class="fa-brands fa-linkedin lin"></i>
-                <i class="fa-brands fa-twitter twi"></i>
-              </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Yao Ruth</h5>
-                  <p class="card-text">Commerciale</p>
-              </div>
-              <img src="images/IMG_5823.jpeg" class="card-img-top" alt="...">
-              <div class="ico">
-                <i class="fa-brands fa-facebook fa"></i>
-                <i class="fa-solid fa-envelope en"></i>
-                <i class="fa-brands fa-linkedin lin"></i>
-                <i class="fa-brands fa-twitter twi"></i>
-              </div>
-            </div>
-          </div>
+        
+        @endforeach
+      </div>
   </div>
-</div>
+  
   </section>
-
-  {{-- FIN DES NOUVELLE --}}
+  
+  {{-- debut partenaire --}}
+  
+  {{-- Debut logo --}}
+  <section>
+    <div class="titre">
+      <h2> Nos <span>Partenaires</span></h2>
+    </div>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        .logo-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin-top: 15px
+        }
+  
+        .logo-item img {
+            max-width: 300px;
+            max-height: 100px;
+            object-fit: contain;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Carousel -->
+    <div class="logo-carousel owl-carousel">
+        @foreach($partenaires as $partenaire)
+        <div class="logo-item"><img src="{{ asset('storage/' . $partenaire->image_path) }}" alt="Logo {{ $partenaire->nom }}"></div>
+        @endforeach
+    </div>
+  
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".logo-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 2 },
+                    600: { items: 3 },
+                    1000: { items: 5 }
+                }
+            });
+        });
+    </script>
+  </body>
 
 @endsection

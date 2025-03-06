@@ -28,19 +28,26 @@ class ControllerServices extends Controller
         $service=Service::all();
         return view('/pages/ListeServices' , compact('service'));
     }
-    public function addservices(Service $service , RequestService $request){
+    public function addservices(Request $request){
        
-                if ($request->hasFile('image')) {
-                    $imagePath = $request->file('image')->store('service', 'public');
-                    $service->image_path = $imagePath;
-                    
-                }
-                // Attribuer les valeurs et sauvegarder contenue
-                $service->titre = $request->titre;
-                $service->description = $request->description;
-                $service->contenue = $request->contenue;
-                $service->save();
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'titre' => 'required|string',
+            'description' => 'required|string',
+            'contenue' => 'required|string',
+
     
+        ]);
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('service', 'public');
+            
+            $service = new Service;
+            $service->titre  = $request->input('titre');
+            $service -> description = $request->input('description');
+            $service -> contenue = $request->input('contenue');
+            $service->image_path = $imagePath;
+            $service->save();
+        }
                 return redirect()-> route('dashlistact');
             
     }
@@ -357,23 +364,21 @@ public function addeditboutique(RequestOdoo $request){
 // FIN DETAILS
 
 //MODIFICATION NOTRE EXPERTISES
-    public function editservicesodoo( $id)
+public function editservicesodoo($id)
 {
     // Rechercher le service dans la base de données
     $service = Service::find($id);
-    $description = strip_tags($service->description);
-    return view('/pages/update', compact('service','description'));
-
+    return view('/pages/update', compact('service'));
 }
-public function addeditservicesodoo( Request $request){
 
+public function addeditservicesodoo(Request $request)
+{
     $request->validate([
+        'id' => 'required|integer|exists:services,id',
         'titre' => 'required|string|max:255',
         'description' => 'required|string',
         'contenue' => 'required|string',
-        
-        'image' => 'image',
-        'image' => 'mimes:jpeg,png,jpg,gif',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
     $service = Service::find($request->id);
@@ -381,14 +386,15 @@ public function addeditservicesodoo( Request $request){
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('service', 'public');
         $service->image_path = $imagePath;
-        
     }
-        // Attribuer les valeurs et sauvegarder
-        $service->titre = $request->titre;
-        $service->description = $request->description;
-        $service->contenue = $request->contenue;
-        $service->update();
-       return redirect('/services');
+
+    // Attribuer les valeurs et sauvegarder
+    $service->titre = $request->titre;
+    $service->description = $request->description;
+    $service->contenue = $request->contenue;
+    $service->save(); // Utilisez save() plutôt que update()
+
+    return redirect()->route('dashlistact')->with('success', 'Service mis à jour avec succès!');
 }
 
 // FIN DE NOTRE EXPERTISES
